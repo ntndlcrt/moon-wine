@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "atoms/*": ["src/components/atoms/*"],
+            "molecules/*": ["src/components/molecules/*"],
+            "sections/*": ["src/components/sections/*"],
+            "queries/*": ["src/queries/*"],
+            "lib/*": ["src/lib/*"],
+            "styles/*": ["styles/*"]
+        }
+    },
+    "exclude": [
+        "node_modules"
+    ]
+}
