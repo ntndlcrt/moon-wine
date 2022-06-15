@@ -1,0 +1,20 @@
+.galery {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+
+    &__cards {
+        display: grid;
+        gap: 2.4rem;
+        overflow: visible;
+        position: absolute;
+        height: fit-content !important;
+            
+        &__card {
+            height: 60rem;
+            width: 40rem;
+            background: no-repeat center/cover;
+        }
+    }
+}
