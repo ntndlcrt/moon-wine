@@ -46,7 +46,7 @@ fetch("https://moon-wine.myshopify.com/api/2021-07/graphql.json", requestOptions
                 {
                     cards.map((card => {
                         return (
-                            <div className="galery__cards__card" style={{backgroundImage: `url(https://picsum.photos/200/300)`}}>{card}</div>
+                            <div key={`galery-cards-card-${i}`} className="galery__cards__card" style={{backgroundImage: `url(https://picsum.photos/200/300)`}}>{card}</div>
                         )
                     }))
                 }
