@@ -1,18 +1,22 @@
-import { client } from 'queries/shopifyClient'
+import { getProducts } from 'queries/shopifyApi'
 
-export default function Home({ products }) {
-    console.log(products)
+import ProductsFeed from 'sections/productsFeed'
+
+export default function Home({ products, product }) {
     return (
-        <h1 className="text-72">MOON WINE</h1>
+        <>
+            <h1 className="text-72 px-6 pt-10 pb-20">MOON WINE</h1>
+            <ProductsFeed products={products} />
+        </>
     )
 }
 
 export const getServerSideProps = async () => {
-    const products = await client.product.fetchAll() ?? null
+    const products = await getProducts()
 
     return {
         props: {
-            products: JSON.parse(JSON.stringify(products))
+            products: JSON.parse(JSON.stringify(products)),
         }
     }
 }

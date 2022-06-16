@@ -27,10 +27,10 @@ var requestOptions = {
 fetch("https://moon-wine.myshopify.com/api/2021-07/graphql.json", requestOptions)
   .then(response => response.text())
   .then(result => console.log(result))
-  .catch(error => console.log('error', error));
+  .catch(error => console.log('error', error))
 
     return (
-        <motion.div className="galery" ref={constraintsRef} onWheel={() => {alert('wheel')}}>
+        <motion.div className="galery" ref={constraintsRef}>
             <motion.div
                 className="galery__cards"
                 style={{
