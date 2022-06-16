@@ -13,6 +13,7 @@ var graphql = JSON.stringify({
                     handle
                     title
                     productType
+                    publishedAt
                     images(first: 10) {
                         edges {
                             node {
@@ -42,11 +43,12 @@ var requestOptions = {
 }
 
 function getProductObject(data) {
-    const { id, handle, title, images } = data
+    const { id, handle, title, images, publishedAt } = data
     const type = data.productType
 
     return {
         id,
+        publishedAt,
         handle,
         title,
         type,
@@ -81,6 +83,15 @@ export default async function getProducts(params = null) {
                             productsData.push(getProductObject(productData))
                         }
                     }
+                })
+
+                productsData.sort((a, b) => {
+                    let timestampA = new Date(a.publishedAt)
+                    let timestampB = new Date(b.publishedAt)
+
+                    if (timestampA > timestampB) return -1
+                    if (timestampA < timestampB) return 1
+                    return 0
                 })
 
                 return productsData
