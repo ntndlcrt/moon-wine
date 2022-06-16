@@ -1,6 +1,6 @@
 import { getProducts } from 'queries/shopifyApi'
 
-const products = await getProducts()
+const products = await getProducts({type: 'Bouteille'})
 
 export default function Product({ product }) {
     return (
