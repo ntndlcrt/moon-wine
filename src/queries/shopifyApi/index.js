@@ -1,7 +1,9 @@
-import getProducts from './_products'
-import getProductById from './_productById'
+import {
+    getProducts,
+    getProductByHandle
+} from './products'
 
 export {
     getProducts,
-    getProductById
+    getProductByHandle
 }

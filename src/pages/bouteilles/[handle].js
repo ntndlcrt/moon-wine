@@ -1,6 +1,4 @@
-import { getProducts } from 'queries/shopifyApi'
-
-const products = await getProducts({type: 'Bouteille'})
+import { getProducts, getProductByHandle } from 'queries/shopifyApi'
 
 export default function Product({ product }) {
     return (
@@ -9,6 +7,8 @@ export default function Product({ product }) {
 }
 
 export const getStaticPaths = async () => {
+    const products = await getProducts({type: 'Bouteille'})
+
     const paths = products.map((product) => ({
         params: {
             handle: product.handle
@@ -22,8 +22,7 @@ export const getStaticPaths = async () => {
 }
 
 export const getStaticProps = async ({ params }) => {
-    const products = await getProducts()
-    const product = products.find(product => product.handle === params.handle)
+    const product = await getProductByHandle(params.handle)
 
     return {
         props: {

@@ -4,15 +4,13 @@ myHeaders.append('Content-Type', 'application/json')
 myHeaders.append('X-Shopify-Storefront-Access-Token', '264ef0e372d2093b9a8ad4ab597725cd')
 myHeaders.append('Cookie', 'request_method=POST')
 
-function getBody(id) {
+function getBody(handle) {
     const graphql = JSON.stringify({
         query: `{
-            node(id: "${id}") {
-                ... on Product {
-                    id
-                    handle
-                    title
-                }
+            productByHandle(handle: "${handle}") {
+                id
+                handle
+                title
             }
         }`,
         variables: {}
@@ -21,31 +19,28 @@ function getBody(id) {
     return graphql
 }
 
-function getRequestOptions(id) {
+function getRequestOptions(handle) {
     const requestOptions = {
         method: 'POST',
         headers: myHeaders,
-        body: getBody(id),
+        body: getBody(handle),
         redirect: 'follow'
     }
 
     return requestOptions
 }
 
-export default async function getProductById(id) {
-    const product = await fetch(`https://${process.env.NEXT_PUBLIC_DOMAIN}/api/2021-07/graphql.json`, getRequestOptions(id))
+export default async function getProductByHandle(handle) {
+    const product = await fetch(`https://${process.env.NEXT_PUBLIC_DOMAIN}/api/2021-07/graphql.json`, getRequestOptions(handle))
         .then(response => response.text())
             .then(result => {
-                let productData = {}
-                let data = JSON.parse(result).data.node
+                const { id, handle, title } = JSON.parse(result).data.productByHandle
 
-                productData = {
-                    id: data.id,
-                    handle: data.handle,
-                    title: data.title
+                return {
+                    id,
+                    handle,
+                    title
                 }
-
-                return productData
             })
                 .catch(error => console.log('error', error))
 
