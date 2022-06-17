@@ -1,102 +1,43 @@
-var myHeaders = new Headers()
+import { storefrontClient } from 'shopifyApi/config'
+import { getBodyProducts } from 'shopifyApi/bodies'
 
-myHeaders.append('Content-Type', 'application/json')
-myHeaders.append('X-Shopify-Storefront-Access-Token', `${process.env.NEXT_PUBLIC_STOREFRONT_TOKEN}`)
-myHeaders.append('Cookie', 'request_method=POST')
+async function getFormatedProducts(productsData) {
+    let products = []
 
-var graphql = JSON.stringify({
-    query: `{
-        products(first: 100) {
-            edges {
-                node {
-                    id
-                    handle
-                    title
-                    productType
-                    publishedAt
-                    images(first: 10) {
-                        edges {
-                            node {
-                                src
-                            }
-                        }
-                    }
-                    metafields(first: 15) {
-                        edges {
-                            node {
-                                key
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }`,
-    variables: {}
-})
+    for(const product of productsData) {
+        const { handle, title, publishedAt, productType } = product.node
+        let images = []
 
-var requestOptions = {
-    method: 'POST',
-    headers: myHeaders,
-    body: graphql,
-    redirect: 'follow'
-}
-
-function getProductObject(data) {
-    const { id, handle, title, images, publishedAt } = data
-    const type = data.productType
-
-    return {
-        id,
-        publishedAt,
-        handle,
-        title,
-        type,
-        images
+        product.node.images?.edges.forEach(edge => {
+            images.push(edge.node.src)
+        })
+        
+        products.push({
+            productType,
+            handle,
+            title,
+            publishedAt,
+            images
+        })
     }
+
+    return products
 }
 
-export default async function getProducts(params = null) {
-    const products = await fetch(`https://${process.env.NEXT_PUBLIC_DOMAIN}/api/2021-07/graphql.json`, requestOptions)
-        .then(response => response.text())
-            .then(result => {
-                let productsData = []
+export default async function getProducts(type = null) {
+    let productsData = await storefrontClient.query(getBodyProducts())
+    productsData = productsData?.body?.data?.products?.edges ?? null
 
-                JSON.parse(result).data.products.edges.map((product) => {
-                    let images = []
+    const products = await getFormatedProducts(productsData)
 
-                    product.node.images?.edges?.map((image) => {
-                        images.push(image.node.src)
-                    })
+    products.sort((a, b) => {
+        let timestampA = new Date(a.publishedAt)
+        let timestampB = new Date(b.publishedAt)
 
-                    let productData = product.node
-                    productData.images = images
-
-                    if(params === null) {
-                        productsData.push(getProductObject(productData))
-                    } else {
-                        if(params.type !== undefined) {
-                            if(productData.productType === params.type) {
-                                productsData.push(getProductObject(productData))
-                            }
-                        } else {
-                            productsData.push(getProductObject(productData))
-                        }
-                    }
-                })
-
-                productsData.sort((a, b) => {
-                    let timestampA = new Date(a.publishedAt)
-                    let timestampB = new Date(b.publishedAt)
-
-                    if (timestampA > timestampB) return -1
-                    if (timestampA < timestampB) return 1
-                    return 0
-                })
-
-                return productsData
-            })
-                .catch(error => console.log('error', error))
+        if (timestampA > timestampB) return -1
+        if (timestampA < timestampB) return 1
+        return 0
+    })
 
     return products
 }

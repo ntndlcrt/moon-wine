@@ -12,11 +12,11 @@ export default function Home({ products }) {
 }
 
 export const getServerSideProps = async () => {
-    const products = await getProducts({type: 'Box'})
+    const products = await getProducts()
 
     return {
         props: {
-            products: JSON.parse(JSON.stringify(products))
+            products: JSON.parse(JSON.stringify(products)),
         }
     }
 }
