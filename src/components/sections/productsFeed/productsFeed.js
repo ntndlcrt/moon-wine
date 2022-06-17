@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import ProductCard from 'molecules/ProductCard'
 
 export default function ProductsFeed({products}) {
     return (
@@ -6,15 +6,10 @@ export default function ProductsFeed({products}) {
             <div className="grid grid-cols-4 gap-6 px-6">
                 {products &&
                     products.map((product) => {
-                        let { id, title, images } = product
+                        let { id } = product
 
                         return (
-                            <div key={`product-${id}`} className="flex flex-col">
-                                <div className="py-40 w-full ovf-hidden relative" style={{backgroundImage: `url('${images[0]}')`}}>
-                                    <Image src={images[0]} layout="fill" objectFit="cover" objectPosition="center" />
-                                </div>
-                                <h2 className="text-18 font-300 mt-2">{title}</h2>
-                            </div>
+                            <ProductCard key={`product-card-${id}`} src={product.images[0]} title={product.title} />
                         )
                     })
                 }

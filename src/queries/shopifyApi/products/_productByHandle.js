@@ -1,7 +1,7 @@
 var myHeaders = new Headers()
 
 myHeaders.append('Content-Type', 'application/json')
-myHeaders.append('X-Shopify-Storefront-Access-Token', '264ef0e372d2093b9a8ad4ab597725cd')
+myHeaders.append('X-Shopify-Storefront-Access-Token', `${process.env.NEXT_PUBLIC_STOREFRONT_TOKEN}`)
 myHeaders.append('Cookie', 'request_method=POST')
 
 function getBody(handle) {
