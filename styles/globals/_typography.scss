@@ -1,0 +1,12 @@
+@layer base {
+    .title {
+        &--xl {
+            @apply 
+                text-green_dark
+                text-110
+                leading-1
+                uppercase
+            ;
+        }
+    }
+}

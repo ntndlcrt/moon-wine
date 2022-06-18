@@ -1,12 +1,21 @@
+import Head from 'next/head'
 import { getProducts } from 'queries/shopifyApi'
 
-import ProductsFeed from 'sections/ProductsFeed'
+import Nav from 'molecules/Nav'
+import HpHero from 'sections/HpHero'
 
 export default function Home({ products }) {
     return (
         <>
-            <h1 className="text-72 px-6 pt-10 pb-20">MOON WINE</h1>
-            <ProductsFeed products={products} />
+            <Head>
+                <title>Moon Wine | Un vigneron, un artiste, un vin unique</title>
+            </Head>
+            <body>
+                <Nav />
+                <main>
+                    <HpHero products={products} />
+                </main>
+            </body>
         </>
     )
 }

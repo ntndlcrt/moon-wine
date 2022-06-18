@@ -1,0 +1,50 @@
+.nav {
+    @apply
+        fixed
+        top-0
+        left-0
+        w-screen
+        pt-5
+        px-7_5
+        text-beige
+        grid
+        grid-cols-6
+    ;
+
+    z-index: 100;
+    transition: 0.3s ease;
+
+    &Hidden {
+        transform: translateY(-100%);
+    }
+
+    &Logo {
+        @apply col-span-1;
+        width: 14rem;
+        height: 2.4rem;
+    }
+
+    &Links {
+        @apply
+        col-span-4
+            flex
+            items-center
+            justify-center
+        ;
+
+        a {
+            @apply
+                text-beige
+                text-14
+                uppercase
+                mr-4
+                last:mr-0
+                leading-1
+            ;
+        }
+    }
+
+    &Icons {
+        @apply col-span-1;
+    }
+}

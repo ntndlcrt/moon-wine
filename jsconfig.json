@@ -1,8 +1,9 @@
 {
     "compilerOptions": {
+        "jsx": "react",
         "baseUrl": ".",
         "paths": {
-            "atoms/*": ["src/components/atoms/*"],
+            "UI/*": ["src/components/UI/*"],
             "molecules/*": ["src/components/molecules/*"],
             "sections/*": ["src/components/sections/*"],
             "queries/*": ["src/queries/*"],

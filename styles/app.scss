@@ -1,59 +1,25 @@
 @tailwind base;
 @tailwind components;
 
+@import 'globals/fonts';
+@import 'globals/typography';
+
+@import 'sections/hpHero';
+
+@import 'sections/hpHero';
+
+@import 'layouts/galery';
+
+@import 'vendors/swiper';
+
 html {
     font-size: 62.5% !important;
     overflow-x: hidden;
 }
 
 body {
+    @apply bg-beige font-inter;
     overflow-x: hidden;
 }
-
-.header {
-    overflow: hidden;
-}
-
-.header-shape {
-    position: absolute;
-    inset: 0 0 0 0;
-    background: red;
-    display: block;
-    contain: strict;
-    overflow: hidden;
-
-    &-item {
-        width: 60rem;
-        height: 60rem;
-        content: "";
-        border-radius: 50%;
-        background: blue;
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
-}
-
-.header-blend {
-    color: black;
-    background: white;
-    mix-blend-mode: screen;
-    position: relative;
-    z-index: 1;
-    overflow: hidden;
-
-    &::before {
-        content: "";
-        position: absolute;
-        top: -12px;
-        left: -6px;
-        right: -6px;
-        bottom: -52px;
-        z-index: -1;
-        background: #fff;
-    }
-}
-
-@import 'layouts/galery';
 
 @tailwind utilities;

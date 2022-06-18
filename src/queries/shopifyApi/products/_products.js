@@ -24,11 +24,17 @@ async function getFormatedProducts(productsData) {
     return products
 }
 
-export default async function getProducts(type = null) {
+export default async function getProducts({type = null}) {
     let productsData = await storefrontClient.query(getBodyProducts())
     productsData = productsData?.body?.data?.products?.edges ?? null
 
-    const products = await getFormatedProducts(productsData)
+    let products = await getFormatedProducts(productsData)
+
+    if(type !== null) {
+        products = products.filter(product => {
+            return product.productType === type
+        })
+    }
 
     products.sort((a, b) => {
         let timestampA = new Date(a.publishedAt)

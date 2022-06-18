@@ -1,0 +1,49 @@
+.banner {
+    @apply
+        absolute
+        left-0
+        top-0
+        pb-20
+        bg-red
+        w-full
+    ;
+
+    content: ""
+}
+
+.frame {
+    height: 54rem;
+    width: 48rem;
+    position: absolute;
+    left: 50%;
+    top: -14rem;
+    transform: translateX(-50%);
+    z-index: 30;
+
+    &Image {
+        height: 100%;
+        width: 100%;
+    }
+
+    &Pattern {
+        @apply bg-green_dark;
+
+        width: 36rem;
+        height: 40rem;
+        position: absolute;
+        left: 50%;
+        top: -8rem;
+        transform: translateX(-50%);
+        z-index: 10;
+
+        svg {
+            width: 36rem;
+            height: 40rem;
+        }
+    }
+}
+
+.swiper {
+    z-index: 20 !important;
+    padding-left: 14.5rem !important;
+}
