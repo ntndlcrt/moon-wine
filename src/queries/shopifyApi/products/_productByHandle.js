@@ -1,48 +1,19 @@
-var myHeaders = new Headers()
+import { storefrontClient } from 'shopifyApi/config'
+import { getBodyProductByHandle } from 'shopifyApi/bodies'
 
-myHeaders.append('Content-Type', 'application/json')
-myHeaders.append('X-Shopify-Storefront-Access-Token', `${process.env.NEXT_PUBLIC_STOREFRONT_TOKEN}`)
-myHeaders.append('Cookie', 'request_method=POST')
+function getFormatedProduct(productData) {
+    let title = productData.title
+    let variantID = productData.variants.edges[0].node.id
 
-function getBody(handle) {
-    const graphql = JSON.stringify({
-        query: `{
-            productByHandle(handle: "${handle}") {
-                id
-                handle
-                title
-            }
-        }`,
-        variables: {}
-    })
-
-    return graphql
-}
-
-function getRequestOptions(handle) {
-    const requestOptions = {
-        method: 'POST',
-        headers: myHeaders,
-        body: getBody(handle),
-        redirect: 'follow'
+    return {
+        title,
+        variantID
     }
-
-    return requestOptions
 }
 
 export default async function getProductByHandle(handle) {
-    const product = await fetch(`https://${process.env.NEXT_PUBLIC_DOMAIN}/api/2021-07/graphql.json`, getRequestOptions(handle))
-        .then(response => response.text())
-            .then(result => {
-                const { id, handle, title } = JSON.parse(result).data.productByHandle
+    let productData = await storefrontClient.query(getBodyProductByHandle(handle))
+    productData = productData?.body?.data?.productByHandle
 
-                return {
-                    id,
-                    handle,
-                    title
-                }
-            })
-                .catch(error => console.log('error', error))
-
-    return product
+    return getFormatedProduct(productData)
 }
