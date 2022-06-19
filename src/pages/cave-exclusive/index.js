@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { getProducts } from 'queries/shopifyApi'
+import { getProducts } from 'queries/products'
 
 import Nav from 'molecules/Nav'
 import ProductsFeed from 'sections/ProductsFeed'
@@ -24,21 +24,7 @@ export default function Home({ products }) {
 }
 
 export const getServerSideProps = async () => {
-    const getProductsProps = {
-        type: 'Bouteille',
-        metafields: [
-            {
-                namespace: 'accentuate',
-                key: 'wineColor'
-            },
-            {
-                namespace: 'accentuate',
-                key: 'imgPng'
-            }
-        ]
-    }
-
-    const products = await getProducts(getProductsProps)
+    const products = await getProducts('Bouteille')
 
     return {
         props: {

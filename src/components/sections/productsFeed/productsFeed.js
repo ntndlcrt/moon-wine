@@ -7,7 +7,7 @@ export default function ProductsFeed({products}) {
                 {products &&
                     products.map((product) => {
                         return (
-                            <ProductCard {...product} />
+                            <ProductCard key={`product-card-${product.handle}`} {...product} />
                         )
                     })
                 }
