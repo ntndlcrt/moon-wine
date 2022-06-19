@@ -31,8 +31,6 @@ export default function ProductsSliderFrame({  }) {
         })
 
         setBottles(bottlesSrcs)
-
-        console.log(bottles)
     }, [])
 
     return (

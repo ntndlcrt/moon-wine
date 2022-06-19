@@ -1,9 +1,18 @@
 @layer base {
     .title {
+        &--l {
+            @apply
+                font-molgak
+                text-2_5
+                leading-1_2
+                uppercase
+            ;
+        }
+
         &--xl {
             @apply 
-                text-green_dark
-                text-110
+                font-molgak
+                text-7_65
                 leading-1
                 uppercase
             ;

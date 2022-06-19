@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
 
-import { LogoBeige } from 'UI/Logos'
+import { Logo } from 'UI/Logos'
 
 import styles from './Nav.module.scss'
 
@@ -35,7 +35,7 @@ export default function Nav() {
         <nav className={`${styles.nav} ${show ? '' : styles.navHidden}`}>
             <Link href={`/`} passHref>
                 <a className={styles.navLogo}>
-                    <LogoBeige />
+                    <Logo color="green_dark" />
                 </a>
             </Link>
             <div className={styles.navLinks}>

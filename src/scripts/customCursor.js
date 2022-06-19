@@ -8,9 +8,6 @@ export default function customCursor() {
             let mouseY = e.clientY
             cursor.style.left = mouseX + 'px'
             cursor.style.top = mouseY + 'px'
-
-            console.log(mouseX)
-            console.log(mouseY)
         })
     }
 }

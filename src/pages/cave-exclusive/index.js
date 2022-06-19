@@ -5,8 +5,6 @@ import Nav from 'molecules/Nav'
 import ProductsFeed from 'sections/ProductsFeed'
 
 export default function Home({ products }) {
-    console.log(products)
-    
     return (
         <>
             <Head>
@@ -15,7 +13,7 @@ export default function Home({ products }) {
             <body>
                 <Nav />
                 <main>
-                    <section className="pt-24 pb-17_5 px-7_5">
+                    <section className="pt-16_8 pb-6_25">
                         <h1 className="title--xl">La cave<br/>exclusive</h1>
                     </section>
                     <ProductsFeed products={products} />
@@ -26,7 +24,21 @@ export default function Home({ products }) {
 }
 
 export const getServerSideProps = async () => {
-    const products = await getProducts({type: 'Bouteille'})
+    const getProductsProps = {
+        type: 'Bouteille',
+        metafields: [
+            {
+                namespace: 'accentuate',
+                key: 'wineColor'
+            },
+            {
+                namespace: 'accentuate',
+                key: 'imgPng'
+            }
+        ]
+    }
+
+    const products = await getProducts(getProductsProps)
 
     return {
         props: {

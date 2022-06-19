@@ -1,5 +1,5 @@
-import LogoBeige from './_logoBeige'
+import Logo from './_logo'
 
 export {
-    LogoBeige
+    Logo
 }

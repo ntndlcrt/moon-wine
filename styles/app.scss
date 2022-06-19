@@ -18,8 +18,12 @@ html {
 }
 
 body {
-    @apply bg-beige font-inter;
+    @apply bg-beige font-inter text-green_dark text-15;
     overflow-x: hidden;
+}
+
+section {
+    padding: 0 6rem;
 }
 
 @tailwind utilities;

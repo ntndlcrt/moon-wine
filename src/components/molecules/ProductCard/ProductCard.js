@@ -1,14 +1,46 @@
 import Image from 'next/image'
+import Link from 'next/link'
+import { motion } from 'framer-motion'
 
-export default function ProductCard({ src, title }) {
+import { LabelWineColor, AvailableForSale } from 'UI/Labels'
+import { ShapeMoonWhite, ShapeMoonWhiteFull } from 'UI/Shapes'
+
+import styles from './ProductCard.module.scss'
+
+const bottle = {
+    rest: {
+        transform: 'translate(-50%, -50%)'
+    },
+    hover: {
+        transform: 'translate(-50%, -50%) rotate(-25deg)'
+    }
+}
+
+export default function ProductCard({ handle, imgPng, availableForSale, title, wineColor, price }) {
     return (
-        <div className="flex flex-col">
-            <div className="py-40 w-full ovf-hidden relative">
-                {src &&
-                    <Image src={src ?? ''} layout="fill" objectFit="cover" objectPosition="center" />
-                }
+        <motion.div className={styles.productCard} initial="rest" whileHover="hover" animate="rest">
+            <Link href={`/cave-exclusive/${handle}`}>
+                <div className={styles.productCardVisual}>
+                    {imgPng &&
+                        <motion.div className={styles.productCardVisualImage} variants={bottle}>
+                            <Image src={imgPng} layout="fill" objectFit="contain" objectPosition="center" />
+                        </motion.div>
+                    }
+                    <div className={styles.productCardVisualShape}>
+                        <ShapeMoonWhite />
+                    </div>
+                </div>
+            </Link>
+            <AvailableForSale available={availableForSale} />
+            <Link href={`/cave-exclusive/${handle}`} passHref>
+                <a>
+                    <h2 className={`title--l ${styles.productCardTitle}`}>{title}</h2>
+                </a>
+            </Link>
+            <div className="flex items-center justify-center mt-auto">
+                <LabelWineColor text={wineColor ?? '---'} />
+                <span className="ml-0_8 text-1">{price}€</span>
             </div>
-            <h2 className="text-18 font-300 mt-2">{title ?? ''}</h2>
-        </div>
+        </motion.div>
     )
 }

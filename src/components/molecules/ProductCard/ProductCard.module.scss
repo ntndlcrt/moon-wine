@@ -1,0 +1,66 @@
+.productCard {
+    @apply
+        flex
+        flex-col
+        items-center
+        text-center
+    ;
+
+    &Visual {
+        @apply
+            w-full
+            relative
+            mb-4_75
+            cursor-pointer
+        ;
+
+        &::before {
+            @apply
+                block
+                w-full
+            ;
+
+            content: "";
+            padding-bottom: 100%;
+        }
+
+        &Image {
+            @apply
+                absolute
+                top-1/2
+                left-1/2
+                h-80
+                w-80
+                z-30
+                ease-in-out
+                duration-300
+            ;
+        }
+
+        &Shape {
+            @apply
+                absolute
+                top-1/2
+                left-1/2
+                -translate-x-1/2
+                -translate-y-1/2
+                z-20
+                flex
+                justify-end
+                items-center
+                opacity-50
+            ;
+
+            &, & svg {
+                @apply h-full w-auto;
+            }
+        }
+    }
+
+    &Title {
+        @apply
+            mt-1_1
+            mb-1_67
+        ;
+    }
+}

@@ -1,4 +1,4 @@
-export default function getBodyProducts() {
+export default function getBodyProducts({metafields}) {
     return {
         data: `{
             products (first: 100) {
@@ -9,12 +9,23 @@ export default function getBodyProducts() {
                         title
                         productType
                         publishedAt
-                        images(first: 10) {
+                        variants(first: 1) {
                             edges {
                                 node {
-                                    src
+                                    price
+                                    availableForSale
                                 }
                             }
+                        }
+                        ${metafields &&
+                            metafields.map(field => {
+                                return `
+                                    ${field.key}: metafield(namespace: "${field.namespace}", key: "${field.key}") {
+                                        key
+                                        value
+                                    }
+                                `
+                            })
                         }
                     }
                 }

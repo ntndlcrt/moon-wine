@@ -1,34 +1,43 @@
 import { storefrontClient } from 'shopifyApi/config'
 import { getBodyProducts } from 'shopifyApi/bodies'
 
-async function getFormatedProducts(productsData) {
+async function getFormatedProducts(productsData, metafieldsData) {
     let products = []
 
     for(const product of productsData) {
-        const { handle, title, publishedAt, productType } = product.node
-        let images = []
+        const { handle, title, publishedAt, productType, variants } = product.node
+        let wineColor, imgPng = null
+        let { price, availableForSale } = variants.edges[0].node
 
-        product.node.images?.edges.forEach(edge => {
-            images.push(edge.node.src)
-        })
+        if(metafieldsData.some(field => field.key === 'wineColor')) {
+            wineColor = product.node['wineColor']?.value ?? null
+        }
+
+        if(metafieldsData.some(field => field.key === 'imgPng')) {
+            let imgData = product.node['imgPng']?.value
+            imgPng = imgData ? JSON.parse(imgData)[0].src : null
+        }
         
         products.push({
             productType,
             handle,
             title,
             publishedAt,
-            images
+            price,
+            availableForSale,
+            wineColor,
+            imgPng
         })
     }
 
     return products
 }
 
-export default async function getProducts({type = null}) {
-    let productsData = await storefrontClient.query(getBodyProducts())
+export default async function getProducts({type = null, metafields = []}) {
+    let productsData = await storefrontClient.query(getBodyProducts({metafields}))
     productsData = productsData?.body?.data?.products?.edges ?? null
 
-    let products = await getFormatedProducts(productsData)
+    let products = await getFormatedProducts(productsData, metafields)
 
     if(type !== null) {
         products = products.filter(product => {
