@@ -34,8 +34,7 @@ export default function ProductsSliderFrame({  }) {
     }, [])
 
     return (
-        <div id="products-slider-frame" className="w-screen pb-28 relative">
-            <div className={styles.banner}></div>
+        <div id="products-slider-frame" className="relative pb-13">
             <div className={styles.frame}>
                 <Image src='/img/png/frame.png' layout="fill" object-fit="contain" />
             </div>

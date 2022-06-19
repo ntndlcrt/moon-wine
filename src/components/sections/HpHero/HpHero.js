@@ -2,9 +2,9 @@ import ProductsSliderFrame from 'molecules/ProductsSliderFrame'
 
 export default function HpHero() {
     return (
-        <section>
-            <div className="w-screen h-screen bg-red relative pt-28 flex justify-center">
-                <h1 className="text-center font-molgak text-110 leading-1 text-beige uppercase w-content">
+        <section className="bg-red">
+            <div className="h-screen relative pt-13 flex justify-center">
+                <h1 className="text-center title--xl text-beige w-content">
                     Un vigneron,<br/>un artiste,<br/>un vin unique.
                 </h1>
             </div>

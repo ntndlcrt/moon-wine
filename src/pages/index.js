@@ -1,10 +1,9 @@
 import Head from 'next/head'
-import { getProducts } from 'queries/shopifyApi'
 
 import Nav from 'molecules/Nav'
 import HpHero from 'sections/HpHero'
 
-export default function Home({ products }) {
+export default function Home() {
     return (
         <>
             <Head>
@@ -13,19 +12,9 @@ export default function Home({ products }) {
             <body>
                 <Nav />
                 <main>
-                    <HpHero products={products} />
+                    <HpHero />
                 </main>
             </body>
         </>
     )
-}
-
-export const getServerSideProps = async () => {
-    const products = await getProducts()
-
-    return {
-        props: {
-            products: JSON.parse(JSON.stringify(products)),
-        }
-    }
 }
