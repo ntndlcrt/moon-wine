@@ -2,7 +2,7 @@ import { storefrontClient } from 'queries/storefrontClient'
 
 const gql = String.raw
 
-export async function checkoutCreate(id, quantity) {
+export async function createCheckout(id, quantity) {
     console.log(id)
     console.log(quantity)
     const query = gql`

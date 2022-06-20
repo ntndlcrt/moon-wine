@@ -6,33 +6,33 @@ import { Logo } from 'UI/Logos'
 import styles from './Nav.module.scss'
 
 export default function Nav() {
-    const [show, setShow] = useState(true)
-    const [lastScrollY, setLastScrollY] = useState(0)
+    // const [show, setShow] = useState(true)
+    // const [lastScrollY, setLastScrollY] = useState(0)
   
-    const controlNavbar = () => {
-        if (typeof window !== 'undefined') { 
-            if (window.scrollY > lastScrollY) {
-                setShow(false)
-            } else {
-                setShow(true)
-            }
+    // const controlNavbar = () => {
+    //     if (typeof document !== 'undefined') { 
+    //         if (document.scrollY > lastScrollY) {
+    //             setShow(false)
+    //         } else {
+    //             setShow(true)
+    //         }
             
-            setLastScrollY(window.scrollY)
-        }
-    }
+    //         setLastScrollY(document.scrollY)
+    //     }
+    // }
   
-    useEffect(() => {
-        if (typeof window !== 'undefined') {
-            window.addEventListener('scroll', controlNavbar)
+    // useEffect(() => {
+    //     if (typeof document !== 'undefined') {
+    //         document.addEventListener('scroll', controlNavbar)
 
-            return () => {
-                window.removeEventListener('scroll', controlNavbar)
-            }
-        }
-    }, [lastScrollY])
+    //         return () => {
+    //             document.removeEventListener('scroll', controlNavbar)
+    //         }
+    //     }
+    // }, [lastScrollY])
 
     return (
-        <nav className={`${styles.nav} ${show ? '' : styles.navHidden}`}>
+        <nav id="nav" className={`${styles.nav}`}>
             <Link href={`/`} passHref>
                 <a className={styles.navLogo}>
                     <Logo color="green_dark" />

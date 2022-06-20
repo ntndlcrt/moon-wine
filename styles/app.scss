@@ -11,10 +11,15 @@
 @import 'layouts/galery';
 
 @import 'vendors/swiper';
+@import 'vendors/locomotiveScroll';
 
 html {
     font-size: 62.5% !important;
     overflow-x: hidden;
+}
+
+html[data-direction="down"] #nav {
+    transform: translate3d(0, -100%, 0) !important;
 }
 
 body {

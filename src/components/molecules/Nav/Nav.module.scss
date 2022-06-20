@@ -13,10 +13,7 @@
     transition: 0.3s ease;
     padding-left: 6rem;
     padding-right: 6rem;
-
-    &Hidden {
-        transform: translateY(-100%);
-    }
+    transform: translate3d(0, 0, 0);
 
     &Logo {
         @apply col-span-1;

@@ -8,6 +8,7 @@
             "sections/*": ["src/components/sections/*"],
             "queries/*": ["src/queries/*"],
             "lib/*": ["src/lib/*"],
+            "context/*": ["src/context/*"],
             "styles/*": ["styles/*"],
             "shopifyApi/*": ["src/queries/shopifyApi/*"]
         }

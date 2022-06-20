@@ -1,7 +1,7 @@
-import { checkoutCreate } from './_create'
-import { checkoutUpdate } from './_update'
+import { createCheckout } from './_create'
+import { updateCheckout } from './_update'
 
 export {
-    checkoutCreate,
-    checkoutUpdate,
+    createCheckout,
+    updateCheckout,
 }

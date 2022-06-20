@@ -1,6 +1,6 @@
 import { storefrontClient } from 'queries/storefrontClient'
 
-export async function checkoutUpdate(id, lineItems) {  
+export async function updateCheckout(id, lineItems) {  
     const formattedLineItems = lineItems.map(item => {
         return `{
             variantId: "${item.variantId}",
