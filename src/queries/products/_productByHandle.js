@@ -14,7 +14,7 @@ function getFormattedProduct(productData) {
 
 export async function getProductByHandle(handle) {
     const query = gql`{
-        productByHandle(handle: "${handle}") {
+        product(handle: "${handle}") {
             title
             variants(first: 1) {
                 edges {
@@ -28,9 +28,9 @@ export async function getProductByHandle(handle) {
 
     const response = await storefrontClient({query})
 
-    let product = response.data.productByHandle
+    let product = response.data.product
         ?
-            getFormattedProduct(response.data.productByHandle)
+            getFormattedProduct(response.data.product)
         :
             []
 

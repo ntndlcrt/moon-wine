@@ -11,8 +11,10 @@ export default function Home() {
             </Head>
             <body>
                 <Nav />
-                <main>
-                    <HpHero />
+                <main data-scroll-container>
+                    <div data-scroll-section>
+                        <HpHero />
+                    </div>
                 </main>
             </body>
         </>

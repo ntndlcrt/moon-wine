@@ -1,5 +1,5 @@
 export async function storefrontClient({query, variables = {}}) {
-    const fetchUrl = `https://${process.env.NEXT_PUBLIC_DOMAIN}/api/2021-01/graphql.json`
+    const fetchUrl = `https://${process.env.NEXT_PUBLIC_DOMAIN}/api/2022-01/graphql.json`
 
     const fetchOptions = {
         endpoint: fetchUrl,

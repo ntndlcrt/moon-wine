@@ -54,6 +54,8 @@ module.exports = {
             'black': '#000000',
             'transparent': 'transparent',
 
+            'gray_darker': '#2B2B2B',
+
             'red': '#B83D42',
             'beige': '#F5F4EC',
 

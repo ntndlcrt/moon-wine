@@ -24,6 +24,19 @@ function getFormattedProducts(productsData) {
     return products
 }
 
+function sortByDate(products) {
+    products.sort((a, b) => {
+        let timestampA = new Date(a.publishedAt)
+        let timestampB = new Date(b.publishedAt)
+
+        if (timestampA > timestampB) return -1
+        if (timestampA < timestampB) return 1
+        return 0
+    })
+
+    return products
+}
+
 export async function getProducts(type = null) {
     const query = gql`{
         products (first: 100) {
@@ -69,14 +82,15 @@ export async function getProducts(type = null) {
         })
     }
 
-    products.sort((a, b) => {
-        let timestampA = new Date(a.publishedAt)
-        let timestampB = new Date(b.publishedAt)
+    let available = []
+    let notAvailable = []
 
-        if (timestampA > timestampB) return -1
-        if (timestampA < timestampB) return 1
-        return 0
+    products.forEach(product => {
+        product.availableForSale === true ? available.push(product) : notAvailable.push(product)
     })
 
-    return products
+    available = sortByDate(available)
+    notAvailable = sortByDate(notAvailable)
+
+    return available.concat(notAvailable)
 }
