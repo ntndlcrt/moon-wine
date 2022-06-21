@@ -1,0 +1,38 @@
+.frame {
+    @apply
+        w-full
+        h-full
+        relative
+        overflow-hidden
+    ;
+
+    transform: rotate(4deg);
+
+    &Bottle {
+        @apply -translate-x-1/2 z-30 absolute;
+        width: 4.86vw;
+        height: 18.75vw;
+        top: 25%;
+        left: 42.5%;
+    }
+
+    img:last-of-type {
+        @apply z-40;
+    }
+
+    &Background {
+        @apply
+            absolute
+            left-1/2
+            top-1/2
+            -translate-x-1/2
+            -translate-y-1/2
+            bg-green
+            w-85
+            h-85
+            z-10
+        ;
+
+        content: "";
+    }
+}
