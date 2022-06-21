@@ -20,8 +20,8 @@ const stepsContents = [
     {
         title: "Des cartes à collectionner",
         content: "Vous retrouverez également dans chaque box des cartes à collectionner,  à la fois sur le design conçu par les artistes et les artistes eux-mêmes.",
-        srcFirst: "/img/jpg/boxSteps/step_3_first.jpg",
-        srcSecond: "/img/jpg/boxSteps/step_3_second.jpg",
+        srcFirst: "/img/jpg/boxSteps/step_4_first.jpg",
+        srcSecond: "/img/jpg/boxSteps/step_4_second.jpg",
     }
 ]
 
