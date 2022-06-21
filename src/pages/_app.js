@@ -1,30 +1,40 @@
+import { useEffect } from 'react'
+
+import Nav from '@molecules/Nav'
+import StepsOverlay from '@molecules/StepsOverlay'
+
 import '@styles/app.scss'
 
 export default function App({ Component, pageProps }) {
-    let oldValue = 0
-    let newValue = 0
+    useEffect(() => {
+        let scroll
+        
+        import('locomotive-scroll').then((locomotiveModule) => {
+            scroll = new locomotiveModule.default({
+                el: document.querySelector("[data-scroll-container]"),
+                smooth: true,
+                smoothMobile: false,
+                resetNativeScroll: true,
+                getDirection: true
+            })
 
-    if(typeof window !== 'undefined') {
-        window.addEventListener('scroll', (e) => {
-            newValue = window.pageYOffset
-
-            if (oldValue < newValue) {
-                document.querySelector('html').setAttribute('data-direction', 'down')
-            } else if (oldValue > newValue) {
-                document.querySelector('html').setAttribute('data-direction', 'up')
-            }
-
-            oldValue = newValue
+            scroll.on('scroll', (instance) => {
+                document.documentElement.setAttribute('data-direction', instance.direction)
+            })
         })
-    }
 
-    if (typeof window === 'undefined') {
-        return <></>
-    } else {
-        return (
-            <body>
+        return () => {
+            if (scroll) scroll.destroy()
+        }
+    })
+
+    return (
+        <>
+            <Nav />
+            <StepsOverlay />
+            <main id="main" data-scroll-container>
                 <Component {...pageProps} />
-            </body>
-        )
-    }
+            </main>
+        </>
+    )
 }

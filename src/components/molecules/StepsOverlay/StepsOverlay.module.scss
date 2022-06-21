@@ -1,55 +1,4 @@
-.stepButton {
-    @apply
-        rounded-round
-        bg-red
-        text-white
-        p-2_5
-        absolute
-        cursor-pointer
-        -translate-x-1/2
-        -translate-y-1/2
-    ;
-
-    content: "";
-    transition: 0.3s ease;
-    z-index: 75;
-
-    &1 {
-        top: 12.25vw;
-        left: 22vw;
-    }
-
-    &2 {
-        top: 19vw;
-        left: 32vw;
-    }
-
-    &3 {
-        top: 25vw;
-        left: 12vw;
-    }
-
-    &4 {
-        top: 27.65vw;
-        left: 37.75vw;
-    }
-
-    span {
-        @apply
-            absolute
-            top-1/2
-            left-1/2
-            -translate-x-1/2
-            -translate-y-1/2
-        ;
-    }
-
-    &:hover, &Active {
-        @apply p-3;
-    }
-}
-
-.stepOverlay {
+.stepsOverlay {
     @apply
         bg-white
         h-screen
@@ -65,24 +14,6 @@
 
     &Active {
         left: 0;
-    }
-
-    &CloseArea {
-        @apply
-            absolute
-            right-0
-            top-0
-            w-full
-            h-screen
-        ;
-
-        content: "";
-
-        &Active {
-            @apply 
-                -right-full
-            ;
-        }
     }
 
     &Content {

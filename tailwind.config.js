@@ -66,6 +66,7 @@ module.exports = {
 
             'red': '#B83D42',
             'beige': '#F5F4EC',
+            'beige_dark': '#E2DAC3',
 
             'green': '#316B4B',
             'green_dark': '#1A3928'

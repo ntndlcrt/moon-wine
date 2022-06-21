@@ -11,7 +11,7 @@
 @import 'layouts/galery';
 
 @import 'vendors/swiper';
-//@import 'vendors/locomotiveScroll';
+@import 'vendors/locomotiveScroll';
 
 html {
     font-size: 62.5% !important;
@@ -19,6 +19,10 @@ html {
 }
 
 html[data-direction="down"] #nav {
+    transform: translate3d(0, -125%, 0) !important;
+}
+
+html[data-hide-nav="true"] #nav {
     transform: translate3d(0, -125%, 0) !important;
 }
 
