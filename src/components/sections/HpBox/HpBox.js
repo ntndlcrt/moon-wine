@@ -54,7 +54,7 @@ export default function HpBox() {
     function changeStep(which) {
         if(which === 'previous' && activeStep > 1) {
             setActiveStep(activeStep - 1)
-        } else if (activeStep < 4) {
+        } else if (which === 'next' && activeStep < 4) {
             setActiveStep(activeStep + 1)
         }
     }
