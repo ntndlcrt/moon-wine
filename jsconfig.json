@@ -1,16 +1,15 @@
 {
     "compilerOptions": {
         "jsx": "react",
-        "baseUrl": ".",
+        "baseUrl": "src",
         "paths": {
-            "UI/*": ["src/components/UI/*"],
-            "molecules/*": ["src/components/molecules/*"],
-            "sections/*": ["src/components/sections/*"],
-            "queries/*": ["src/queries/*"],
-            "lib/*": ["src/lib/*"],
-            "context/*": ["src/context/*"],
-            "styles/*": ["styles/*"],
-            "shopifyApi/*": ["src/queries/shopifyApi/*"]
+            "UI/*": ["components/UI/*"],
+            "molecules/*": ["components/molecules/*"],
+            "sections/*": ["components/sections/*"],
+            "queries/*": ["queries/*"],
+            "lib/*": ["lib/*"],
+            "context/*": ["context/*"],
+            "shopifyApi/*": ["queries/shopifyApi/*"]
         }
     },
     "exclude": [

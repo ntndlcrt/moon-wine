@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 
-import 'styles/app.scss'
+import '../../styles/app.scss'
 
 export default function App({ Component, pageProps }) {
     useEffect(() => {
