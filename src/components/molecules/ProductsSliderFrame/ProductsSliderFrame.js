@@ -74,15 +74,6 @@ export default function ProductsSliderFrame({  }) {
                     <img src={bottles[8]} alt="" />
                 </SwiperSlide>
             </Swiper>
-            {/* <div className={styles.bottles} data-scroll data-scroll-direction="horizontal" direction="horizontal">
-                {bottles && bottles.map((bottle) => {
-                    return (
-                        <div className={styles.bottlesBottle}>
-                            <img src={bottle} alt="" />
-                        </div>
-                    )
-                })}
-            </div> */}
             <div className={styles.framePattern}>
                 <PatternFrame />
             </div>

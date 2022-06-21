@@ -11,13 +11,11 @@ export default function Home({ products }) {
                 <title>Cave exclusive | Moon wine</title>
             </Head>
             <Nav />
-            <main data-scroll-container>
-                <div data-scroll-section>
-                    <section className="pt-16_8 pb-6_25">
-                        <h1 className="title--xl">La cave<br/>exclusive</h1>
-                    </section>
-                    <ProductsFeed products={products} />
-                </div>
+            <main>
+                <section className="pt-16_8 pb-6_25">
+                    <h1 className="title--xl">La cave<br/>exclusive</h1>
+                </section>
+                <ProductsFeed products={products} />
             </main>
         </>
     )

@@ -15,13 +15,11 @@ export default function Product({ title, variantId }) {
                 <title>{title} | Moon wine</title>
             </Head>
             <Nav />
-            <main data-scroll-container>
-                <div data-scroll-section>
-                    <div>
-                        <h1>{title}</h1>
-                        <p>{variantId}</p>
-                        <button onClick={() => {checkout(variantId)}}>Acheter</button>
-                    </div>
+            <main>
+                <div>
+                    <h1>{title}</h1>
+                    <p>{variantId}</p>
+                    <button onClick={() => {checkout(variantId)}}>Acheter</button>
                 </div>
             </main>
         </>

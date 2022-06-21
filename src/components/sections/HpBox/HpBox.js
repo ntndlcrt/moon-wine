@@ -86,7 +86,7 @@ export default function HpBox() {
                     <Image src='/img/png/boxs/displayed.png' layout="fill" objectFit="contain" objectPosition="center" />
                 </div>
             </div>
-            <div id="step-overlay" className={`${styles.stepOverlay} ${activeStep ? styles.stepOverlayActive : ''}`} data-scroll data-scroll-sticky data-scroll-target="body">
+            <div id="step-overlay" className={`${styles.stepOverlay} ${activeStep ? styles.stepOverlayActive : ''}`}>
                 <div className="flex flex-col h-full">
                     <Close clickEvent={closeOverlay} />
                     <div className="grid grid-cols-4 mt-2_22">
