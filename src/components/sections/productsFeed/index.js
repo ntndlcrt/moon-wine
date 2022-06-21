@@ -1,2 +1,2 @@
-import ProductsFeed from './ProductsFeed'
+import ProductsFeed from './productsFeed'
 export default ProductsFeed
