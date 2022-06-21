@@ -16,6 +16,7 @@ export default function HpBox() {
     function setLocalStorageActiveStep(index) {
         localStorage.setItem('activeStep', index)
         window.dispatchEvent(new Event('storage'))
+        document.documentElement.setAttribute('data-hide-nav', 'true')
     }
 
     useEffect(() => {

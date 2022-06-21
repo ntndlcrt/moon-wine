@@ -32,11 +32,12 @@ export default function StepsOverlay(){
     }
 
     useEffect(() => {
-        if(activeStep !== null) {
-            setStepContent(stepsContents[activeStep -1])
-            document.documentElement.setAttribute('data-hide-nav', 'true')
-        } else {
+        setStepContent(stepsContents[activeStep -1])
+
+        if(activeStep === 'null') {
             document.documentElement.setAttribute('data-hide-nav', 'false')
+        } else if(document.documentElement.getAttribute('data-hide-nav')) {
+            document.documentElement.setAttribute('data-hide-nav', 'true')
         }
 
         if(parseInt(activeStep) === 1) {
@@ -59,6 +60,7 @@ export default function StepsOverlay(){
 
     function closeOverlay() {
         setLocalStorageActiveStep(null)
+        document.documentElement.setAttribute('data-hide-nav', 'false')
     }
 
     function changeStep(which) {
