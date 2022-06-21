@@ -1,2 +1,2 @@
-import ProductsFeed from './ProductsFeed'
+import ProductsFeed from 'components/ProductsFeed/ProductsFeed'
 export default ProductsFeed
