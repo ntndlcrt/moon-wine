@@ -1,0 +1,72 @@
+.button {
+    @apply
+        uppercase
+        text-white
+        rounded-full
+        bg-red
+        text-0_83
+        px-3_33
+        py-1_67
+        font-500
+    ;
+}
+
+.buttonArrow {
+    @apply
+        uppercase
+        font-500
+        text-0_83
+        leading-1_1
+        relative
+        cursor-pointer
+        ease-in-out
+        duration-300
+    ;
+
+    &Left {
+        @apply
+            pl-2_92
+        ;
+
+        svg {
+            @apply left-0;
+        }
+
+        &:hover {
+            svg {
+                transform: translate(-1.2rem, -50%);
+            }
+        }
+    }
+
+    &Right {
+        @apply
+            pr-2_92
+        ;
+
+        svg {
+            @apply right-0 rotate-180;
+        }
+
+        &:hover {
+            svg {
+                transform: translate(1.2rem, -50%) rotate(180deg);
+            }
+        }
+    }
+
+    svg {
+        @apply
+            absolute
+            top-1/2
+            -translate-y-1/2
+            ease-in-out
+            duration-300
+        ;
+    }
+
+    &Disabled {
+        pointer-events: none;
+        opacity: 0.5;
+    }
+}

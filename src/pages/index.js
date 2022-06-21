@@ -10,15 +10,13 @@ export default function Home() {
             <Head>
                 <title>Moon Wine | Un vigneron, un artiste, un vin unique</title>
             </Head>
-            <body>
-                <Nav />
-                <main data-scroll-container>
-                    <div data-scroll-section>
-                        <HpHero />
-                        <HpBox />
-                    </div>
-                </main>
-            </body>
+            <Nav />
+            <main data-scroll-container>
+                <div data-scroll-section>
+                    <HpHero />
+                    <HpBox />
+                </div>
+            </main>
         </>
     )
 }
