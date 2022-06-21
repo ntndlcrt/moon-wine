@@ -23,12 +23,17 @@ html[data-direction="down"] #nav {
 }
 
 body {
-    @apply bg-beige font-inter text-green_dark text-15;
+    @apply bg-beige font-inter text-gray_darkest text-1;
     overflow-x: hidden;
 }
 
 section {
     padding: 0 6rem;
+}
+
+.extraPadding {
+    padding-left: 6rem;
+    padding-right: 6rem;
 }
 
 @tailwind utilities;

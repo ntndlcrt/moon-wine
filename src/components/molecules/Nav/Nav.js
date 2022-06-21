@@ -6,36 +6,11 @@ import { Logo } from 'UI/Logos'
 import styles from './Nav.module.scss'
 
 export default function Nav() {
-    // const [show, setShow] = useState(true)
-    // const [lastScrollY, setLastScrollY] = useState(0)
-  
-    // const controlNavbar = () => {
-    //     if (typeof document !== 'undefined') { 
-    //         if (document.scrollY > lastScrollY) {
-    //             setShow(false)
-    //         } else {
-    //             setShow(true)
-    //         }
-            
-    //         setLastScrollY(document.scrollY)
-    //     }
-    // }
-  
-    // useEffect(() => {
-    //     if (typeof document !== 'undefined') {
-    //         document.addEventListener('scroll', controlNavbar)
-
-    //         return () => {
-    //             document.removeEventListener('scroll', controlNavbar)
-    //         }
-    //     }
-    // }, [lastScrollY])
-
     return (
         <nav id="nav" className={`${styles.nav}`}>
             <Link href={`/`} passHref>
                 <a className={styles.navLogo}>
-                    <Logo color="green_dark" />
+                    <Logo color="gray_darkest" />
                 </a>
             </Link>
             <div className={styles.navLinks}>

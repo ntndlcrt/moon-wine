@@ -2,6 +2,7 @@ import Head from 'next/head'
 
 import Nav from 'molecules/Nav'
 import HpHero from 'sections/HpHero'
+import HpBox from 'sections/HpBox'
 
 export default function Home() {
     return (
@@ -14,6 +15,7 @@ export default function Home() {
                 <main data-scroll-container>
                     <div data-scroll-section>
                         <HpHero />
+                        <HpBox />
                     </div>
                 </main>
             </body>

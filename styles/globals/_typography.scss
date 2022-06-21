@@ -1,4 +1,8 @@
 @layer base {
+    p {
+        @apply leading-1_6;
+    }
+
     .title {
         &--l {
             @apply
@@ -10,6 +14,15 @@
         }
 
         &--xl {
+            @apply 
+                font-molgak
+                text-5
+                leading-1_1
+                uppercase
+            ;
+        }
+
+        &--xxl {
             @apply 
                 font-molgak
                 text-7_65

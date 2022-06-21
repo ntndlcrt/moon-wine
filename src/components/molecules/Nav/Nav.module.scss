@@ -9,7 +9,7 @@
         grid-cols-6
     ;
 
-    z-index: 100;
+    z-index: 500;
     transition: 0.3s ease;
     padding-left: 6rem;
     padding-right: 6rem;
@@ -31,7 +31,7 @@
 
         a {
             @apply
-                text-0_8
+                text-0_83
                 uppercase
                 mr-2_22
                 last:mr-0
