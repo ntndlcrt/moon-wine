@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Nav from '@molecules/Nav'
 import HpHero from '@sections/HpHero'
 import HpBox from '@sections/HpBox'
+import HpGallery from '@sections/HpGallery'
 
 export default function Home() {
     return (
@@ -15,6 +16,7 @@ export default function Home() {
                 <div data-scroll-section>
                     <HpHero />
                     <HpBox />
+                    <HpGallery />
                 </div>
             </main>
         </>
