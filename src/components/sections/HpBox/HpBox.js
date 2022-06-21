@@ -34,6 +34,9 @@ export default function HpBox() {
     useEffect(() => {
         if(activeStep !== null) {
             setStepContent(stepsContents[activeStep -1])
+            window.addEventListener('mousewheel', (e) => {
+                return false
+            })
         }
 
         if(activeStep === 1) {
