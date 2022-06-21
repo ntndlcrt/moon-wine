@@ -1,5 +1,5 @@
-import ShapeMoonWhite from './_moonWhite'
+import ShapeMoon from './_moon'
 
 export {
-    ShapeMoonWhite
+    ShapeMoon
 }

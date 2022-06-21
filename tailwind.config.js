@@ -54,6 +54,7 @@ module.exports = {
             'black': '#000000',
             'transparent': 'transparent',
 
+            'gray': '#EBEAE1',
             'gray_darker': '#2B2B2B',
 
             'red': '#B83D42',

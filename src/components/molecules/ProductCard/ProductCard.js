@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 
 import { LabelWineColor, AvailableForSale } from 'UI/Labels'
-import { ShapeMoonWhite, ShapeMoonWhiteFull } from 'UI/Shapes'
+import { ShapeMoon } from 'UI/Shapes'
 
 import styles from './ProductCard.module.scss'
 
@@ -18,7 +18,12 @@ const bottle = {
 
 export default function ProductCard({ handle, imgPng, availableForSale, title, wineColor, price }) {
     return (
-        <motion.div className={styles.productCard} initial="rest" whileHover="hover" animate="rest">
+        <motion.div
+            className={styles.productCard}
+            initial="rest"
+            whileHover="hover"
+            animate="rest"
+        >
             <Link href={`/cave-exclusive/${handle}`}>
                 <div className={styles.productCardVisual}>
                     {imgPng &&
@@ -27,7 +32,7 @@ export default function ProductCard({ handle, imgPng, availableForSale, title, w
                         </motion.div>
                     }
                     <div className={styles.productCardVisualShape}>
-                        <ShapeMoonWhite />
+                        <ShapeMoon color={availableForSale ? 'white' : 'gray'} />
                     </div>
                 </div>
             </Link>
