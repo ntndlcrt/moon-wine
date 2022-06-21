@@ -1,7 +1,7 @@
 {
     "compilerOptions": {
         "jsx": "react",
-        "baseUrl": ".",
+        "baseUrl": "./",
         "paths": {
             "UI/*": ["src/components/UI/*"],
             "molecules/*": ["src/components/molecules/*"],
