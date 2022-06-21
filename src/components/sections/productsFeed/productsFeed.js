@@ -1,4 +1,4 @@
-import ProductCard from 'molecules/ProductCard'
+import ProductCard from '@molecules/ProductCard'
 
 export default function ProductsFeed({products}) {
     return (

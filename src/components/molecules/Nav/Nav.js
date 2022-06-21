@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
 
-import { Logo } from 'UI/Logos'
+import { Logo } from '@UI/Logos'
 
 import styles from './Nav.module.scss'
 

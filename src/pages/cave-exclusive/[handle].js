@@ -1,7 +1,7 @@
 import Head from 'next/head'
-import Nav from 'molecules/Nav'
-import { getProducts, getProductByHandle } from 'queries/products'
-import { createCheckout } from 'queries/checkouts'
+import Nav from '@molecules/Nav'
+import { getProducts, getProductByHandle } from '@queries/products'
+import { createCheckout } from '@queries/checkouts'
 
 export default function Product({ title, variantId }) {
     async function checkout(id) {

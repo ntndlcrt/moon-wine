@@ -1,8 +1,8 @@
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
 
-import { Button, ButtonArrow } from 'UI/Buttons'
-import { Close } from 'UI/Icons'
+import { Button, ButtonArrow } from '@UI/Buttons'
+import { Close } from '@UI/Icons'
 
 import stepsContents from './_stepsContents'
 import styles from './HpBox.module.scss'

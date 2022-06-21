@@ -1,4 +1,4 @@
-import { storefrontClient } from 'queries/storefrontClient'
+import { storefrontClient } from '@queries/storefrontClient'
 
 export async function updateCheckout(id, lineItems) {  
     const formattedLineItems = lineItems.map(item => {

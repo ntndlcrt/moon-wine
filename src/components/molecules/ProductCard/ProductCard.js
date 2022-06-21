@@ -2,8 +2,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 
-import { LabelWineColor, AvailableForSale } from 'UI/Labels'
-import { ShapeMoon } from 'UI/Shapes'
+import { LabelWineColor, AvailableForSale } from '@UI/Labels'
+import { ShapeMoon } from '@UI/Shapes'
 
 import styles from './ProductCard.module.scss'
 

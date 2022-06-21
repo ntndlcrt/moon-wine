@@ -1,4 +1,4 @@
-import { Arrow } from 'UI/Icons'
+import { Arrow } from '@UI/Icons'
 
 import styles from './Button.module.scss'
 

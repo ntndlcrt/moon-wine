@@ -3,7 +3,7 @@ import { Autoplay } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { useState, useEffect } from 'react'
 
-import { PatternFrame } from 'UI/Patterns'
+import { PatternFrame } from '@UI/Patterns'
 
 import styles from './ProductsSliderFrame.module.scss'
 import 'swiper/css'

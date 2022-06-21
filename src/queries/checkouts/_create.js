@@ -1,4 +1,4 @@
-import { storefrontClient } from 'queries/storefrontClient'
+import { storefrontClient } from '@queries/storefrontClient'
 
 const gql = String.raw
 

@@ -1,8 +1,8 @@
 import Head from 'next/head'
-import { getProducts } from 'queries/products'
+import { getProducts } from '@queries/products'
 
-import Nav from 'molecules/Nav'
-import ProductsFeed from 'sections/ProductsFeed'
+import Nav from '@molecules/Nav'
+import ProductsFeed from '@sections/ProductsFeed'
 
 export default function Home({ products }) {
     return (

@@ -1,4 +1,4 @@
-import ProductsSliderFrame from 'molecules/ProductsSliderFrame'
+import ProductsSliderFrame from '@molecules/ProductsSliderFrame'
 
 export default function HpHero() {
     return (
