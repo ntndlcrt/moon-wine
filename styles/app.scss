@@ -40,4 +40,12 @@ section {
     padding-right: 6rem;
 }
 
+.paddingNone {
+    padding: 0;
+}
+
+.ticker {
+    overflow: visible !important;
+}
+
 @tailwind utilities;

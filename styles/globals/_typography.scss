@@ -30,5 +30,16 @@
                 uppercase
             ;
         }
+
+        &--xxxl {
+            @apply 
+                font-molgak
+                text-17_36
+                leading-1
+                uppercase
+                w-content
+                whitespace-nowrap
+            ;
+        }
     }
 }
