@@ -12,13 +12,16 @@
         flex-col
         items-center
         justify-center
+        overflow-hidden;
     ;
 
     z-index: 1000;
     transition: 0.3s ease-in-out;
+    transition-delay: visibility 0.3s;
 
     &Hidden {
         @apply -translate-y-full;
+        visibility: hidden;
     }
 
     &Logo {
