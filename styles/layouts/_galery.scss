@@ -1,8 +1,12 @@
 .galery {
-    width: 100vw;
-    height: 100vh;
-    position: relative;
-    overflow: hidden;
+    @apply
+        bg-beige
+        relative
+        h-screen
+        w-screen
+        overflow-hidden
+        z-30
+    ;
 
     &__cards {
         display: grid;
@@ -10,6 +14,7 @@
         overflow: visible;
         position: absolute;
         height: fit-content !important;
+        padding: 6rem;
             
         &__card {
             height: 60rem;
