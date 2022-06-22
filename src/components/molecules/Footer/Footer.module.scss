@@ -3,8 +3,13 @@
         bg-gray_darkest
         h-screen
         w-screen
-        pt-9_7
         text-beige
+        font-300
+        tracking-tight
+        py-3_33
+        flex
+        flex-col
+        justify-between
     ;
 
     padding-left: 6rem;
@@ -19,13 +24,67 @@
         ;
 
         &Contact {
-            @apply flex flex-col;
+            @apply
+                flex
+                flex-col
+            ;
+        }
+
+        &Links {
+            @apply
+                grid
+                grid-cols-2
+                gap-x-9_7
+                gap-y-4_17
+            ;
         }
 
         &Label {
             svg {
-                height: 5vw;
-                width: auto;
+                height: 12.5vw;
+                width: 12.5vw;
+                transform: rotate(15deg);
+            }
+        }
+    }
+
+    &Footer {
+        &Logo {
+            svg {
+                @apply
+                    w-full
+                    h-auto
+                ;
+            }
+        }
+    
+        &Copyright {
+            @apply
+                flex
+                items-center
+                justify-between
+                text-0_7
+                uppercase
+                pt-3_33
+                mt-4_75
+                relative
+                uppercase
+                font-600
+                tracking-normal
+            ;
+    
+            &::before {
+                @apply
+                    absolute
+                    left-0
+                    top-0
+                    w-full
+                    border-t
+                    border-beige
+                    opacity-10
+                ;
+    
+                content: "";
             }
         }
     }
