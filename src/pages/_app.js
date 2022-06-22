@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 
 import Nav from '@molecules/Nav'
+import Footer from '@molecules/Footer'
 import StepsOverlay from '@molecules/StepsOverlay'
 
 import '@styles/app.scss'
@@ -38,6 +39,7 @@ export default function App({ Component, pageProps }) {
             <StepsOverlay />
             <main id="main" className="bg-beige" data-scroll-container>
                 <Component {...pageProps} />
+                <Footer />
             </main>
         </>
     )

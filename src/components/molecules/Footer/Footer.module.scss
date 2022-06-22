@@ -1,0 +1,32 @@
+.footer {
+    @apply
+        bg-gray_darkest
+        h-screen
+        w-screen
+        pt-9_7
+        text-beige
+    ;
+
+    padding-left: 6rem;
+    padding-right: 6rem;
+    z-index: 2;
+
+    &Content {
+        @apply
+            flex
+            items-start
+            justify-between
+        ;
+
+        &Contact {
+            @apply flex flex-col;
+        }
+
+        &Label {
+            svg {
+                height: 5vw;
+                width: auto;
+            }
+        }
+    }
+}
