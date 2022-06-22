@@ -10,7 +10,7 @@ const buttonArgs = {
 
 export default function HpBottles({products}) {
     return (
-        <section className="relative bg-beige" data-scroll-section>
+        <section className="relative bg-beige pb-13" data-scroll-section>
             <div className="flex flex-col items-center text-center px-25 mb-6_25">
                 <LabelUptitle title="La cave exclusive" />
                 <h3 className="title--xl mt-2_22 mb-1_1">Nos bouteilles à l'unité</h3>

@@ -7,7 +7,7 @@ import styles from './HpNaturalWineClub.module.scss'
 export default function HpNaturalWineClub() {
     return (
         <>
-            <section className="paddingNone pb-17_5 pt-13 relative" data-scroll-section-inview data-scroll-section>
+            <section className="paddingNone py-13 relative" data-scroll-section-inview data-scroll-section>
                 <Ticker speed={20}>
                     {({index}) => (
                         <>
