@@ -10,14 +10,14 @@ export default function HpNaturalWineClub() {
             <Ticker speed={20}>
                 {({index}) => (
                     <>
-                        <span className="title--xxxl mr-1">Natural wine club</span>
+                        <span className="title--xxxl mr-3_33">Natural wine club</span>
                     </>
                 )}
             </Ticker>
             <Ticker speed={20} direction="toRight">
                 {({index}) => (
                     <>
-                        <span className="title--xxxl mr-1">Natural wine club</span>
+                        <span className="title--xxxl mr-3_33">Natural wine club</span>
                     </>
                 )}
             </Ticker>
