@@ -59,7 +59,7 @@ export default function Footer() {
                             {linksProducts.map(link => {
                                 return (
                                     <Link key={`footer-link-${link.url}`} href={link.url} passHref>
-                                        <a className="mb-0_7 text-1_18 leading-1_1">{link.title}</a>
+                                        <a className="mb-1 text-1_18 leading-1_1">{link.title}</a>
                                     </Link>
                                 )
                             })}
@@ -68,7 +68,7 @@ export default function Footer() {
                             {linksAbout.map(link => {
                                 return (
                                     <Link key={`footer-link-${link.url}`} href={link.url} passHref>
-                                        <a className="mb-0_7 text-1_18 leading-1_1">{link.title}</a>
+                                        <a className="mb-1 text-1_18 leading-1_1">{link.title}</a>
                                     </Link>
                                 )
                             })}

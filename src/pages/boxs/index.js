@@ -6,7 +6,9 @@ export default function Boxs({ products }) {
         pageTitle: 'Boxs à l\'unité | Moon wine',
         title: 'Boxs à<br/>l\'unité',
         content: 'Vous souhaitez découvrir nos boxs sans vous abonner à l\’une de<br/>nos formules ? Il vous est possible de commander la box du<br/>moment à l\’unité.',
-        products
+        products,
+        latestBoxPosition: 'top',
+        subTitle: 'les boxs<br/>précédentes'
     } 
 
     return (

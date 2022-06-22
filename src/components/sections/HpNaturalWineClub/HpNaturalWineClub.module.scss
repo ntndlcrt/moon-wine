@@ -1,11 +1,22 @@
-.bottle {
+.bottleFirst {
     @apply
         absolute
-        z-50
     ;
 
     width: 33.33vw;
     height: 33.33vw;
     left: 33.33vw;
     top: 10vw;
+}
+
+.bottleSecond {
+    @apply
+        absolute
+    ;
+
+    width: 33.33vw;
+    height: 33.33vw;
+    left: 27.5vw;
+    top: 20vw;
+    filter: blur(5px);
 }

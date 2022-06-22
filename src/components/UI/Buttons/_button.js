@@ -17,7 +17,7 @@ export default function Button(args) {
         if(isLink) {
             return (
                 <Link href={url} passhref>
-                    <a className={`${styles.button} ${color ? styles.color : ''}`}>{title}</a>
+                    <a className={`${styles.button} ${color === 'beige' ? styles.beige : ''}`}>{title}</a>
                 </Link>
             )
         }

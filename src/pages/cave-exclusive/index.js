@@ -6,7 +6,8 @@ export default function Bottles({ products }) {
         pageTitle: 'Cave exclusive | Moon wine',
         title: 'La cave<br/>exclusive',
         content: 'Il vous est possible de commander une bouteille à l’unité afin de<br/>pouvoir découvrir des cuvées différentes ou ré-apprécier des vins qui<br/>vous ont marqué.',
-        products
+        products,
+        latestBoxPosition: 'bottom'
     }
 
     return (

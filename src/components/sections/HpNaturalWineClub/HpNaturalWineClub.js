@@ -22,8 +22,11 @@ export default function HpNaturalWineClub() {
                         </>
                     )}
                 </Ticker>
-                <div className={styles.bottle} data-scroll data-scroll-speed="9">
-                    <Image src="/img/png/natural_wine_club.png" layout="fill" objectFit="contain" objectPosition="center" />
+                <div className={`${styles.bottleFirst} z-50`} data-scroll data-scroll-speed="9">
+                    <Image src="/img/png/natural_wine_club_tiltRight.png" layout="fill" objectFit="contain" objectPosition="center" />
+                </div>
+                <div className={`${styles.bottleSecond} z-20`} data-scroll data-scroll-speed="7">
+                    <Image src="/img/png/natural_wine_club_tiltLeft.png" layout="fill" objectFit="contain" objectPosition="center" />
                 </div>
             </section>
         </>
