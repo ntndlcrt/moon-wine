@@ -1,9 +1,9 @@
 .frame {
-    height: 54rem;
-    width: 48rem;
+    height: 37.5vw;
+    width: 33.33vw;
     position: absolute;
     left: 50%;
-    top: -14rem;
+    top: -9.72vw;
     transform: translateX(-50%);
     z-index: 30;
 
@@ -15,22 +15,23 @@
     &Pattern {
         @apply bg-gray_darker;
 
-        width: 36rem;
-        height: 40rem;
+        width: 25vw;
+        height: 27.78vw;
         position: absolute;
         left: 50%;
-        top: -8rem;
+        top: -5.55vw;
         transform: translateX(-50%);
         z-index: 10;
 
         svg {
-            width: 36rem;
-            height: 40rem;
+            width: 25vw;
+            height: 27.78vw;
         }
     }
 }
 
 .swiper {
     z-index: 20 !important;
-    padding-left: 7.5rem !important;
+    @apply -translate-x-5_55 overflow-visible;
+    width: 110vw !important;
 }
