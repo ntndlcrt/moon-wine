@@ -52,7 +52,7 @@ export default function Footer() {
                         <a href="mailto:contact@moonwine.fr" className="text-2_22 mb-2_77 leading-1_2">contact@moonwine.fr</a>
                         <span className="font-500 mb-0_7 text-0_83 uppercase">Rencontrez-nous</span>
                         <p className="text-2_22 mb-3_33 leading-1_2">17 rue du Sec Arembault<br/>59800 Lille, France</p>
-                        <p className="opacity-50 text-0_93">L’abus d’alcool est dangereux pour la santé,<br/>à consommer avec modération.</p>
+                        <p className="opacity-50 text-0_83">L’abus d’alcool est dangereux pour la santé,<br/>à consommer avec modération.</p>
                     </div>
                     <div className={styles.footerContentLinks}>
                         <div className="flex flex-col">
