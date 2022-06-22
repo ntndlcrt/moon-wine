@@ -3,7 +3,7 @@ import parse from 'html-react-parser'
 
 import ProductsFeed from '@sections/ProductsFeed'
 
-export default function LayoutProductsPage({pageTitle, title, content, products}) {
+export default function LayoutProductsPage({pageTitle, title, content, products, noWhiteLabel}) {
     return (
         <>
             <Head>
@@ -16,7 +16,7 @@ export default function LayoutProductsPage({pageTitle, title, content, products}
                     <p className="absolute right-2_77 bottom-0 translate-y-1/2">{parse(content)}</p>
                 </div>
             </section>
-            <ProductsFeed products={products} />
+            <ProductsFeed products={products} noWhiteLabel={noWhiteLabel} />
         </>
     )
 }
