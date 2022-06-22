@@ -58,7 +58,7 @@ export default function Footer() {
                         <div className="flex flex-col">
                             {linksProducts.map(link => {
                                 return (
-                                    <Link href={link.url} passHref>
+                                    <Link key={`footer-link-${link.url}`} href={link.url} passHref>
                                         <a className="mb-0_7 text-1_18 leading-1_1">{link.title}</a>
                                     </Link>
                                 )
@@ -67,7 +67,7 @@ export default function Footer() {
                         <div className="flex flex-col">
                             {linksAbout.map(link => {
                                 return (
-                                    <Link href={link.url} passHref>
+                                    <Link key={`footer-link-${link.url}`} href={link.url} passHref>
                                         <a className="mb-0_7 text-1_18 leading-1_1">{link.title}</a>
                                     </Link>
                                 )
