@@ -36,7 +36,7 @@ export default function App({ Component, pageProps }) {
         <>
             <Nav />
             <StepsOverlay />
-            <main id="main" data-scroll-container>
+            <main id="main" className="bg-beige" data-scroll-container>
                 <Component {...pageProps} />
             </main>
         </>

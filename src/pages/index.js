@@ -1,5 +1,7 @@
 import Head from 'next/head'
 
+import { getThreeAvailablesProducts } from '@queries/products'
+
 import Nav from '@molecules/Nav'
 import HpHero from '@sections/HpHero'
 import HpBox from '@sections/HpBox'
@@ -8,7 +10,7 @@ import HpAbout from '@sections/HpAbout'
 import HpNaturalWineClub from '@sections/HpNaturalWineClub'
 import HpBottles from '@sections/HpBottles'
 
-export default function Home() {
+export default function Home({products}) {
     return (
         <>
             <Head>
@@ -19,7 +21,17 @@ export default function Home() {
             <HpGallery />
             <HpAbout />
             <HpNaturalWineClub />
-            <HpBottles />
+            <HpBottles products={products} />
         </>
     )
+}
+
+export const getServerSideProps = async () => {
+    const products = await getThreeAvailablesProducts()
+
+    return {
+        props: {
+            products: JSON.parse(JSON.stringify(products))
+        }
+    }
 }
