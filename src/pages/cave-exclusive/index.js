@@ -11,12 +11,14 @@ export default function Home({ products }) {
                 <title>Cave exclusive | Moon wine</title>
             </Head>
             <Nav />
-            <main>
-                <section className="pt-16_8 pb-6_25">
-                    <h1 className="title--xl">La cave<br/>exclusive</h1>
-                </section>
-                <ProductsFeed products={products} />
-            </main>
+            <section className="pt-13_5 pb-10_5" data-scroll-section>
+                <div className="flex items-start justify-between relative">
+                    <h1 className="title--xxl">La cave<br/>exclusive</h1>
+                    <span className="title--xxl">({products.length})</span>
+                    <p className="absolute right-2_77 bottom-0 translate-y-1/2">Il vous est possible de commander une bouteille à l’unité afin de<br/>pouvoir découvrir des cuvées différentes ou ré-apprécier des vins qui<br/>vous ont marqué.</p>
+                </div>
+            </section>
+            <ProductsFeed products={products} />
         </>
     )
 }
