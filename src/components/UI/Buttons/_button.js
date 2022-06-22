@@ -9,16 +9,21 @@ export default function Button(args) {
         color,
         url,
         title,
-        isLink
+        isLink,
+        clickEvent
     } = args
     
     if(url) {
         if(isLink) {
             return (
                 <Link href={url} passhref>
-                    <a className={`${styles.button}`}>{title}</a>
+                    <a className={`${styles.button} ${color ? styles.color : ''}`}>{title}</a>
                 </Link>
             )
         }
+    } else {
+        return (
+            <span className={`${styles.button} ${color === 'beige' ? styles.beige : ''}`} onClick={clickEvent ?? ''}>{title}</span>
+        )
     }
 }

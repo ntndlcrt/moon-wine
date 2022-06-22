@@ -16,7 +16,7 @@ const bottle = {
     }
 }
 
-export default function ProductCard({ handle, imgPng, availableForSale, title, wineColor, price }) {
+export default function ProductCard({ handle, imgPng, availableForSale, title, wineColor, release, price }) {
     return (
         <motion.div
             className={styles.productCard}
@@ -43,7 +43,7 @@ export default function ProductCard({ handle, imgPng, availableForSale, title, w
                 </a>
             </Link>
             <div className="flex items-center justify-center mt-auto">
-                <LabelWineColor text={wineColor ?? '---'} />
+                <LabelWineColor text={wineColor ?? release ?? '---'} />
                 <span className="ml-0_8 text-1">{price}€</span>
             </div>
         </motion.div>

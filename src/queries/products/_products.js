@@ -6,7 +6,7 @@ function getFormattedProducts(productsData) {
     let products = []
 
     for(const product of productsData) {
-        const { handle, title, publishedAt, productType, variants, wineColor, imgPng } = product.node
+        const { handle, title, publishedAt, productType, variants, wineColor, release, imgPng } = product.node
         let { price, availableForSale } = variants.edges[0].node
         
         products.push({
@@ -17,6 +17,7 @@ function getFormattedProducts(productsData) {
             price,
             availableForSale,
             wineColor: wineColor?.value ?? null,
+            release: release?.value ?? null,
             imgPng: imgPng?.value ? JSON.parse(imgPng.value)[0].src : null
         })
     }
@@ -56,6 +57,10 @@ export async function getProducts(type = null) {
                         }
                     }
                     wineColor: metafield(namespace: "accentuate", key: "wineColor") {
+                        key
+                        value
+                    }
+                    release: metafield(namespace: "accentuate", key: "release") {
                         key
                         value
                     }

@@ -10,6 +10,7 @@
         font-500
         w-content
         block
+        cursor-pointer
     ;
 }
 
@@ -71,4 +72,11 @@
         pointer-events: none;
         opacity: 0.5;
     }
+}
+
+.beige {
+    @apply
+        bg-beige
+        text-red
+    ;
 }
