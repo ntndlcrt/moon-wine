@@ -48,7 +48,7 @@ export default function ProductsSliderFrame({  }) {
                 >
                     {bottles.map(bottle => {
                         return (
-                            <SwiperSlide>
+                            <SwiperSlide key={`swiper-slide-${bottle}`}>
                                 <Image src={bottle} layout="fill" objectFit="contain" objectPosition="center" />
                             </SwiperSlide>
                         )
