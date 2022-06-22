@@ -10,7 +10,7 @@ const buttonArgs = {
     isLink: true
 }
 
-export default function HpBox() {
+export default function HpBox({isGreen}) {
     const [activeStep, setActiveStep] = useState(null)
 
     function setLocalStorageActiveStep(index) {
@@ -26,11 +26,11 @@ export default function HpBox() {
     }, [])
 
     return (
-        <section className="pt-10_5 pb-12_5" data-scroll-section>
+        <section className={`pt-10_5 pb-12_5 ${isGreen ? 'relative z-20 bg-green_light' : ''}`} data-scroll-section>
             <div className="grid grid-cols-22 extraPadding items-center">
                 <div className="col-span-8 py-5_55">
-                    <h3 className="title--xl mb-1_1">Des boxs au concept unique</h3>
-                    <p className="mb-3_33">Moon Wine, c’est : un vigneron, un artiste, une box de vin naturel et deux cuvées dont une totalement exclusive en édition limitée.  Le tout, disponible, en trois formules pour satisfaire tous vos besoins.</p>
+                    <h3 className={`title--xl mb-1_1 ${isGreen ? 'text-green_dark' : ''}`}>Des boxs au concept unique</h3>
+                    <p className={`mb-3_33 ${isGreen ? 'text-green_dark' : ''}`}>Moon Wine, c’est : un vigneron, un artiste, une box de vin naturel et deux cuvées dont une totalement exclusive en édition limitée.  Le tout, disponible, en trois formules pour satisfaire tous vos besoins.</p>
                     <Button {...buttonArgs} />
                 </div>
                 <div className="col-span-11 col-start-12 relative h-full">

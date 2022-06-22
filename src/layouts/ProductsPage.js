@@ -2,6 +2,7 @@ import Head from 'next/head'
 import parse from 'html-react-parser'
 
 import ProductsFeed from '@sections/ProductsFeed'
+import HpBox from '@sections/HpBox'
 
 export default function LayoutProductsPage({pageTitle, title, content, products, noWhiteLabel}) {
     return (
@@ -17,6 +18,7 @@ export default function LayoutProductsPage({pageTitle, title, content, products,
                 </div>
             </section>
             <ProductsFeed products={products} noWhiteLabel={noWhiteLabel} />
+            <HpBox isGreen="true" />
         </>
     )
 }
