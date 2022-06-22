@@ -19,8 +19,8 @@
 
     &Logo {
         @apply col-span-1;
-        width: 10vw;
-        height: 1.67vw;
+        width: 9vw;
+        height: auto;
     }
 
     &Links {
@@ -31,7 +31,7 @@
             justify-center
         ;
 
-        a {
+        a, span {
             @apply
                 text-0_83
                 uppercase
@@ -39,11 +39,32 @@
                 last:mr-0
                 leading-1
                 font-500
+                cursor-pointer
             ;
         }
     }
 
     &Icons {
         @apply col-span-1;
+    }
+
+    &Products {
+        @apply
+            absolute
+            w-screen
+            bg-white
+            left-0
+            top-0
+            -translate-y-full
+        ;
+
+        padding-top: 13.33vw;
+        padding-right: 6rem;
+        padding-left: 6rem;
+        padding-bottom: 6rem;
+
+        &[data-show="true"] {
+            @apply -translate-y-0;
+        }
     }
 }

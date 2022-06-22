@@ -6,6 +6,8 @@ import { Logo } from '@UI/Logos'
 import styles from './Nav.module.scss'
 
 export default function Nav() {
+    const [showProducts, setShowProducts] = useState(false)
+
     return (
         <nav id="nav" className={`${styles.nav}`}>
             <Link href={`/`} passHref>
@@ -17,17 +19,21 @@ export default function Nav() {
                 <Link href={`/abonnements`}>
                     <a>Abonnements</a>
                 </Link>
-                <Link href={`/boxes`}>
-                    <a>Boxes</a>
+                <span onClick={() => {setShowProducts(!showProducts)}}>Produits</span>
+                <Link href={`/notre-histoire`}>
+                    <a>Notre histoire</a>
                 </Link>
-                <Link href={`/cave-exclusive`}>
-                    <a>Cave exclusive</a>
+                <Link href={`/galerie`}>
+                    <a>Galerie d'art</a>
                 </Link>
-                <Link href={`/cartes-cadeaux`}>
-                    <a>Cartes cadeaux</a>
+                <Link href={`/blog`}>
+                    <a>Blog</a>
                 </Link>
             </div>
             <div className={styles.navIcons}></div>
+            <div className={styles.navProducts} data-show={showProducts}>
+                TEST
+            </div>
         </nav>
     )
 }
