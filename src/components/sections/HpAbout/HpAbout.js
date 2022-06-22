@@ -12,7 +12,7 @@ const buttonArgs = {
 
 export default function HpAbout() {
     return (
-        <section className="py-13" data-scroll-section>
+        <section className="pt-13" data-scroll-section>
             <div className={`flex flex-wrap items-start justify-center px-13_89 title--xl mb-3_33 ${styles.text}`}>
                 <span className="mr-1_67">Pour</span>
                 <div className={styles.vignette}>

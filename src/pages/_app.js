@@ -8,7 +8,7 @@ import '@styles/app.scss'
 export default function App({ Component, pageProps }) {
     useEffect(() => {
         let scroll
-        
+
         import('locomotive-scroll').then((locomotiveModule) => {
             scroll = new locomotiveModule.default({
                 el: document.querySelector("[data-scroll-container]"),
@@ -21,6 +21,10 @@ export default function App({ Component, pageProps }) {
             scroll.on('scroll', (instance) => {
                 document.documentElement.setAttribute('data-direction', instance.direction)
             })
+        })
+        
+        window.addEventListener('DOMContentLoaded', () => {
+            scroll.update()
         })
 
         return () => {

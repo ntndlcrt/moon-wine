@@ -6,6 +6,7 @@ import HpBox from '@sections/HpBox'
 import HpGallery from '@sections/HpGallery'
 import HpAbout from '@sections/HpAbout'
 import HpNaturalWineClub from '@sections/HpNaturalWineClub'
+import HpBottles from '@sections/HpBottles'
 
 export default function Home() {
     return (
@@ -18,6 +19,7 @@ export default function Home() {
             <HpGallery />
             <HpAbout />
             <HpNaturalWineClub />
+            <HpBottles />
         </>
     )
 }

@@ -1,11 +1,11 @@
 .bottle {
     @apply
         absolute
-        absolute
-        z-30
+        z-50
     ;
 
     width: 33.33vw;
     height: 33.33vw;
-    left: 33.33%;
+    left: 33.33vw;
+    top: 10vw;
 }
