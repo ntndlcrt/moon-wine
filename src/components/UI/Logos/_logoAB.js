@@ -5,7 +5,7 @@ export default function LogoAB() {
                 <filter id="Soustraction_4" x="4.378" y="6.432" width="81.728" height="81.728" filterUnits="userSpaceOnUse">
                 <feOffset dy="3" input="SourceAlpha"/>
                 <feGaussianBlur stdDeviation="2" result="blur"/>
-                <feFlood flood-opacity="0.122"/>
+                <feFlood floodOpacity="0.122"/>
                 <feComposite operator="in" in2="blur"/>
                 <feComposite in="SourceGraphic"/>
                 </filter>
