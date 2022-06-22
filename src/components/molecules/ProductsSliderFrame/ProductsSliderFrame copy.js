@@ -34,20 +34,26 @@ export default function ProductsSliderFrame({  }) {
     }, [])
 
     return (
-        <div id="productsSliderFrame" className="relative pb-20_83">
+        <div id="products-slider-frame" className="relative pb-20_83">
             <div className={styles.frame}>
                 <Image src='/img/png/frame.png' layout="fill" object-fit="contain" />
             </div>
             {bottles &&
-                <div className={styles.bottles} data-scroll data-scroll-direction="horizontal" data-scroll-target="#productsSliderFrame" data-scroll-speed="9">
+                <Swiper
+                    slidesPerView={'auto'}
+                    autoplay={{delay: 3000}}
+                    loop={true}
+                    className={styles.swiper}
+                    modules={[Autoplay]}
+                >
                     {bottles.map(bottle => {
                         return (
-                            <div key={`bottle-${bottle}`} className={styles.bottlesBottle}>
+                            <SwiperSlide key={`swiper-slide-${bottle}`}>
                                 <Image src={bottle} layout="fill" objectFit="contain" objectPosition="center" />
-                            </div>
+                            </SwiperSlide>
                         )
                     })}
-                </div>
+                </Swiper>
             }
             <div className={styles.framePattern}>
                 <PatternFrame />

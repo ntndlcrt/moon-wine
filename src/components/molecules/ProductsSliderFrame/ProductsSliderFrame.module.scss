@@ -35,3 +35,24 @@
     @apply -translate-x-5_55 overflow-visible;
     width: 110vw !important;
 }
+
+.bottles {
+    z-index: 20 !important;
+    @apply -translate-x-5_55 overflow-visible;
+    width: 110vw !important;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+    width: fit-content;
+    flex-shrink: 0;
+    position: relative;
+    
+    &Bottle {
+        height: 18.75vw !important;
+        width: 4.86vw !important;
+        min-width: 4.86vw !important;
+        margin-right: 20.14vw !important;
+        position: relative;
+    }
+}
