@@ -41,7 +41,7 @@ export default function Cart() {
             <div className={styles.cartIcon}>
                 <Close clickEvent={closeCart} />
             </div>
-            {cartItems
+            {cartItems.length > 0
                 ?
                     <div className="pt-2_77 h-full flex flex-col text-center items-center justify-start">
                         <span className="title--l mb-3_33">Panier</span>

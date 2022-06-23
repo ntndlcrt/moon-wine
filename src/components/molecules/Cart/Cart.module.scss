@@ -18,9 +18,10 @@
     &Icon {
         @apply
             absolute
-            top-4_17
-            left-4_17
         ;
+
+        top: 6rem;
+        left: 6rem;
     }
 
     &Opened {
