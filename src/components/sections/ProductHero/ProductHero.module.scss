@@ -1,0 +1,29 @@
+.productHero {
+    &Title, &Image {
+        @apply
+            absolute
+            z-20
+            left-1/2
+            top-1/2
+            -translate-y-1/2
+            -translate-x-1/2
+        ;
+    }
+
+    &Title {
+        @apply
+            text-12_9
+            font-molgak
+            uppercase
+            leading-1
+            text-center
+        ;
+    }
+
+    &Image, &ImageScroll {
+        @apply z-30;
+
+        height: 41.67vw;
+        width: 10.76vw;
+    }
+}

@@ -3,8 +3,9 @@ import Head from 'next/head'
 import Nav from '@molecules/Nav'
 import { getProducts, getProductByHandle } from '@queries/products'
 import { useAddToCartContext } from '@context/Store'
+import ProductHero from '@sections/ProductHero'
 
-export default function Product({ handle, title, imgPng, price, availableForSale, wineColor, variantId }) {
+export default function Product({ handle, title, imgPng, price, availableForSale, wineColor, variantId, bgColor, textColor }) {
     // async function checkout(id) {
     //     const checkout = await createCheckout(id, 1)
     //     console.log(checkout)
@@ -33,11 +34,12 @@ export default function Product({ handle, title, imgPng, price, availableForSale
                 <title>{title} | Moon wine</title>
             </Head>
             <Nav />
-            <section data-scroll-section className="bg-beige py-13 relative">
+            {/* <section data-scroll-section className="bg-beige py-13 relative">
                 <h1>{title}</h1>
                 <p>{variantId}</p>
                 <button onClick={handleAddToCart}>Ajouter 1 au panier</button>
-            </section>
+            </section> */}
+            <ProductHero bgColor={bgColor} textColor={textColor} title={title} imgPng={JSON.parse(imgPng)[0].src} />
         </>
     )
 }
@@ -61,6 +63,23 @@ export const getStaticProps = async ({ params }) => {
     const product = await getProductByHandle(params.handle)
     const { handle, title, imgPng, price, availableForSale, wineColor, variantId } = product
 
+    let bgColor, textColor
+
+    switch(wineColor) {
+        case 'Rouge' :
+            bgColor = 'bg-red'
+            textColor = 'text-beige'
+            break
+        case 'Blanc' :
+            bgColor = 'bg-beige_darker'
+            textColor = 'text-beige'
+            break
+        case 'Pet\'nat' :
+            bgColor = 'bg-green_dark'
+            textColor = 'text-green_light'
+            break
+    }
+
     return {
         props: {
             handle,
@@ -69,7 +88,9 @@ export const getStaticProps = async ({ params }) => {
             price,
             availableForSale,
             wineColor,
-            variantId
+            variantId,
+            bgColor,
+            textColor
         }
     }
 }
