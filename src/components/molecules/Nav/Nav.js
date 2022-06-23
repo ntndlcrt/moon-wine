@@ -51,13 +51,13 @@ export default function Nav() {
             </div>
             <div className={styles.navIcons}>
                 <div className={styles.navIconsIcon}>
-                    <Search color="beige" />
+                    <Search color="gray_darkest" />
                 </div>
                 <div className={styles.navIconsIcon}>
-                    <User color="beige" />
+                    <User color="gray_darkest" />
                 </div>
                 <div className={styles.navIconsCart} onClick={() => {toggleCart()}}>
-                    <Bottle color="beige" />
+                    <Bottle color="gray_darkest" />
                     <span className={styles.navIconsCartCount}>{cartItems}</span>
                 </div>
             </div>

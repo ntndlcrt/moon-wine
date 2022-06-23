@@ -9,13 +9,15 @@ function getFormattedProduct(productData) {
     let wineColor = productData.wineColor?.value
     let imgPng = productData.imgPng?.value
 
+    console.log(imgPng)
+
     return {
         handle,
         title,
         variantId: id,
         availableForSale,
         price,
-        imgPng,
+        imgPng: imgPng,
         wineColor
     }
 }

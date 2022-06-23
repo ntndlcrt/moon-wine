@@ -11,7 +11,7 @@ import styles from './CartEmpty.module.scss'
 
 export default function CartEmpty() {
     return (
-        <div className="flex flex-col items-center justify-center text-center w-50">
+        <div className="flex h-full flex-col items-center justify-center text-center w-50">
             <div className={styles.icon}>
                 <EmptyCart />
             </div>

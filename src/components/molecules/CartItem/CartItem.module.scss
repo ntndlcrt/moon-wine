@@ -1,0 +1,50 @@
+.cartItem {
+    @apply
+        flex
+        items-center
+        justify-between
+        pb-1_1
+        mb-1_1
+        last:mb-0
+        border-b
+        border-gray_darkest_faded
+        w-full
+    ;
+
+    &Visual {
+        @apply
+            bg-beige
+            rounded-1
+            mr-1_67
+            relative
+            border-beige
+        ;
+
+        width: 6.25vw;
+        height: 6.25vw;
+        border-style: solid;
+        border-width: 0.75vw;
+    }
+
+    &Quantity {
+        @apply
+            flex
+            items-center
+            mr-3_33
+        ;
+
+        &Toggle {
+            @apply p-0_8 cursor-pointer;
+        }
+
+        &Number {
+            @apply
+                border
+                border-gray_darkest_faded
+                rounded-1
+                py-1_1
+                px-0_8
+            ;
+        }
+    }
+}
