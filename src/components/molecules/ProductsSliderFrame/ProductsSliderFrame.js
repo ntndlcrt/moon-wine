@@ -39,7 +39,7 @@ export default function ProductsSliderFrame({  }) {
                 <Image src='/img/png/frame.png' layout="fill" object-fit="contain" />
             </div>
             {bottles &&
-                <div className={styles.bottles} data-scroll data-scroll-direction="horizontal" data-scroll-target="#productsSliderFrame" data-scroll-speed="9">
+                <div className={styles.bottles} data-scroll data-scroll-direction="horizontal" data-scroll-target="#productsSliderFrame" data-scroll-speed="-9">
                     {bottles.map(bottle => {
                         return (
                             <div key={`bottle-${bottle}`} className={styles.bottlesBottle}>
