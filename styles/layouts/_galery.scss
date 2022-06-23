@@ -17,11 +17,21 @@
         padding: 6rem;
             
         &__card {
-            height: 60rem;
-            width: 40rem;
+            height: 52rem;
+            width: 32rem;
             min-height: 60rem;
             min-width: 40rem;
             background: no-repeat center/cover;
+            content: "";
+            border: 4rem solid white;
+
+            &:nth-of-type(odd) {
+                transform: translateY(-3.5rem)
+            }
+
+            &:nth-of-type(even) {
+                transform: translateY(3.5rem)
+            }
         }
     }
 }

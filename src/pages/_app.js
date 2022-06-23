@@ -1,4 +1,5 @@
-import { useEffect } from 'react'
+import { useState, useEffect } from 'react'
+import { useRouter } from 'next/router'
 
 import AgeConfirm from '@molecules/AgeConfirm'
 import Nav from '@molecules/Nav'
@@ -10,6 +11,9 @@ import { CartProvider } from '@context/Store'
 import '@styles/app.scss'
 
 export default function App({ Component, pageProps }) {
+    const router = useRouter()
+    const [isGallery, setIsGallery] = useState(false)
+
     useEffect(() => {
         let scroll
 
@@ -45,15 +49,23 @@ export default function App({ Component, pageProps }) {
         }
     })
 
+    useEffect(() => {
+        router.asPath === '/galerie' ? setIsGallery(true) : setIsGallery(false)
+    })
+
     return (
         <CartProvider>
             <AgeConfirm />
-            <Nav />
+            {isGallery !== true &&
+                <Nav />
+            }
             <StepsOverlay />
             <Cart />
             <main id="main" className="bg-beige" data-scroll-container>
                 <Component {...pageProps} />
-                <Footer />
+                {isGallery !== true &&
+                    <Footer />
+                }
             </main>
         </CartProvider>
     )
