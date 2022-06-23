@@ -4,6 +4,10 @@
         h-screen
         fixed
         top-0
+        flex
+        flex-col
+        items-center
+        justify-center
     ;
 
     z-index: 150;
@@ -11,6 +15,14 @@
     transition: 0.3s ease;
     padding: 6rem;
     width: 50vw;
+
+    &Icon {
+        @apply
+            absolute
+            top-4_17
+            left-4_17
+        ;
+    }
 
     &Opened {
         right: 0;

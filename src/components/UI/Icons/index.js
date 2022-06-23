@@ -7,6 +7,7 @@ import Service from './_service'
 import Search from './_search'
 import User from './_user'
 import Bottle from './_bottle'
+import EmptyCart from './_emptyCart'
 
 export {
     Close,
@@ -17,5 +18,6 @@ export {
     Service,
     Search,
     User,
-    Bottle
+    Bottle,
+    EmptyCart
 }

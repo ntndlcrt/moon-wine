@@ -11,7 +11,7 @@ export async function updateCheckout(id, lineItems) {
   
     const query = `
         mutation {
-            checkoutLineItemsReplace(lineItems: [${formattedLineItems}], checkoutId: "${atob(id)}") {
+            checkoutLineItemsReplace(lineItems: [${formattedLineItems}], checkoutId: "${id}") {
                 checkout {
                     id
                     webUrl

@@ -1,11 +1,13 @@
 import { useState } from 'react'
 
 import { Close } from '@UI/Icons'
+import CartEmpty from '@molecules/CartEmpty'
 
 import styles from './Cart.module.scss'
 
 export default function Cart() {
     const [openCart, setOpenCart] = useState(false)
+    const [cart, setCart] = useState(null)
 
     function setLocalStorageOpenCart(index) {
         localStorage.setItem('openCart', index)
@@ -25,7 +27,15 @@ export default function Cart() {
 
     return (
         <div className={`${styles.cart} ${openCart ? styles.cartOpened : ''}`}>
-            <Close clickEvent={closeCart} />
+            <div className={styles.cartIcon}>
+                <Close clickEvent={closeCart} />
+            </div>
+            {cart
+                ?
+                    ''
+                :
+                    <CartEmpty />
+            }
         </div>
     )
 }
