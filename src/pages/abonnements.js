@@ -6,7 +6,7 @@ import SubsComparative from '@sections/SubsComparative'
 import LatestBox from '@sections/LatestBox'
 import HpBottles from '@sections/HpBottles'
 
-export default function Subscriptions() {
+export default function Subscriptions({products}) {
     return (
         <>
             <Head>
@@ -15,7 +15,7 @@ export default function Subscriptions() {
             <SubsHero />
             <SubsComparative />
             <LatestBox />
-            <HpBottles />
+            <HpBottles products={products} />
         </>
     )
 }

@@ -67,10 +67,12 @@ module.exports = {
             'red': '#B83D42',
             'beige': '#F5F4EC',
             'beige_dark': '#E2DAC3',
+            'beige_dark': '#E2DAC3',
 
             'green_light': '#D9E0C0',
             'green': '#316B4B',
-            'green_dark': '#1A3928'
+            'green_dark': '#1A3928',
+            'green_dark_faded': '#1A39281F'
         },
         borderRadius: {
             'DEFAULT': '0.6rem',
