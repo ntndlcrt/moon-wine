@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 
 import AgeConfirm from '@molecules/AgeConfirm'
 import Nav from '@molecules/Nav'
+import Cart from '@molecules/Cart'
 import Footer from '@molecules/Footer'
 import StepsOverlay from '@molecules/StepsOverlay'
 
@@ -28,6 +29,15 @@ export default function App({ Component, pageProps }) {
         window.addEventListener('DOMContentLoaded', () => {
             scroll.update()
         })
+        
+        window.addEventListener('resize', () => {
+            scroll.update()
+        })
+
+        window.addEventListener('beforeunload', () => {
+            localStorage.setItem('ageConfirmed', false)
+            localStorage.setItem('openCart', false)
+        })
 
         return () => {
             if (scroll) scroll.destroy()
@@ -39,6 +49,7 @@ export default function App({ Component, pageProps }) {
             <AgeConfirm />
             <Nav />
             <StepsOverlay />
+            <Cart />
             <main id="main" className="bg-beige" data-scroll-container>
                 <Component {...pageProps} />
                 <Footer />

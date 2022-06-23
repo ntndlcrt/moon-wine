@@ -2,11 +2,19 @@ import Link from 'next/link'
 import { useState, useEffect } from 'react'
 
 import { Logo } from '@UI/Logos'
+import { Search, User, Bottle } from '@UI/Icons'
 
 import styles from './Nav.module.scss'
 
 export default function Nav() {
     const [showProducts, setShowProducts] = useState(false)
+
+    function toggleCart() {
+        let current = localStorage.getItem('openCart')
+        localStorage.setItem('openCart', current === 'true' ? false : true)
+        window.dispatchEvent(new Event('storage'))
+        document.documentElement.setAttribute('data-hide-nav', 'true')
+    }
 
     return (
         <nav id="nav" className={`${styles.nav}`}>
@@ -30,7 +38,18 @@ export default function Nav() {
                     <a>Blog</a>
                 </Link>
             </div>
-            <div className={styles.navIcons}></div>
+            <div className={styles.navIcons}>
+                <div className={styles.navIconsIcon}>
+                    <Search color="beige" />
+                </div>
+                <div className={styles.navIconsIcon}>
+                    <User color="beige" />
+                </div>
+                <div className={styles.navIconsCart} onClick={() => {toggleCart()}}>
+                    <Bottle color="beige" />
+                    <span className={styles.navIconsCartCount}>0</span>
+                </div>
+            </div>
             <div className={styles.navProducts} data-show={showProducts}>
                 TEST
             </div>

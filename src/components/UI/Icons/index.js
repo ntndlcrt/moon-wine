@@ -4,6 +4,9 @@ import CheckoutDarkBg from './_checkoutDarkBg'
 import CheckoutLightBg from './_checkoutLightBg'
 import MoonSymbol from './_moonSymbol'
 import Service from './_service'
+import Search from './_search'
+import User from './_user'
+import Bottle from './_bottle'
 
 export {
     Close,
@@ -11,5 +14,8 @@ export {
     CheckoutDarkBg,
     CheckoutLightBg,
     MoonSymbol,
-    Service
+    Service,
+    Search,
+    User,
+    Bottle
 }

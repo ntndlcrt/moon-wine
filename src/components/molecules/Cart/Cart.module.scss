@@ -1,0 +1,18 @@
+.cart {
+    @apply
+        bg-white
+        h-screen
+        fixed
+        top-0
+    ;
+
+    z-index: 150;
+    right: -55%;
+    transition: 0.3s ease;
+    padding: 6rem;
+    width: 50vw;
+
+    &Opened {
+        right: 0;
+    }
+}
