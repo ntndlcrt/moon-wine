@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 
 import { Close } from '@UI/Icons'
 import CartEmpty from '@molecules/CartEmpty'
-import CartItem from '@molecules/Cartitem'
+import CartItem from '@molecules/CartItem'
 import { useCartContext } from '@context/Store'
 import { getCartSubtotal } from '@context/utils'
 import { Button } from '@UI/Buttons'
