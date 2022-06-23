@@ -1,0 +1,38 @@
+.service {
+    @apply
+        flex
+        items-center
+        rounded-full
+        border
+        border-gray_darkest_faded
+        p-1_1
+        mb-1_1
+    ;
+
+    &Icon {
+        @apply
+            rounded-round
+            bg-gray
+            relative
+        ;
+
+        height: 5vw;
+        width: 5vw;
+        margin-right: 1.4vw;
+
+        svg {
+            @apply
+                h-auto
+                w-auto
+                top-1/2
+                left-1/2
+                -translate-x-1/2
+                -translate-y-1/2
+                absolute
+            ;
+
+            max-width: 1.53vw;
+            max-height: 1.53vw;
+        }
+    }
+}

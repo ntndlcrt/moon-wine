@@ -45,6 +45,10 @@ const subs = [
 export default function SubsComparative() {
     return (
         <section className="mb-13" data-scroll-section>
+            <div className="flex flex-col items-center text-center w-45 mb-6_25 mx-auto">
+                <h2 className="title--xl mb-1_1">Nos offres</h2>
+                <p>Nous vous proposons 3 types d’abonnements annuels. Les Boxs de série sont livrées tous les deux mois à partir de janvier et les boxs hors-série sont livrées en février, août et décembre</p>
+            </div>
             <div className="grid grid-cols-3 gap-2">
                 {subs.map((sub, index) => {
                     return (

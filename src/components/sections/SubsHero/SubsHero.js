@@ -36,7 +36,7 @@ export default function SubsHero() {
                 </div>
                 <h1 className="title--xxl mb-1_67">Les formules<br/>moonwine</h1>
                 <p className="mb-4_75">Moon Wine, c’est : un vigneron, un artiste, une box de vin naturel et deux<br/>cuvées dont une totalement exclusive en édition limitée.  Le tout, disponible,<br/>en trois formules pour satisfaire tous vos besoins.</p>
-                <div className={styles.displayed}>
+                <div className={styles.displayed} data-scroll data-scroll-speed="-1">
                     <div className={`${styles.stepButton} ${styles.stepButton1} ${parseInt(activeStep) === 1 ? styles.stepButtonActive : ''}`} onClick={() => {setLocalStorageActiveStep(1)}}>
                         <span>1</span>
                     </div>

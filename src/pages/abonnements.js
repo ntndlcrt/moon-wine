@@ -3,6 +3,7 @@ import Head from 'next/head'
 import { getThreeAvailablesProducts } from '@queries/products'
 import SubsHero from '@sections/SubsHero'
 import SubsComparative from '@sections/SubsComparative'
+import SubsServices from '@sections/SubsServices'
 import LatestBox from '@sections/LatestBox'
 import HpBottles from '@sections/HpBottles'
 
@@ -14,6 +15,7 @@ export default function Subscriptions({products}) {
             </Head>
             <SubsHero />
             <SubsComparative />
+            <SubsServices />
             <LatestBox />
             <HpBottles products={products} />
         </>
