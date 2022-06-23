@@ -6,11 +6,10 @@
         text-beige
         font-300
         tracking-tight
-        pt-5_55
-        pb-1_67
+        pb-2_22
         flex
         flex-col
-        justify-between
+        justify-end
     ;
 
     padding-left: 6rem;
@@ -22,6 +21,7 @@
             flex
             items-start
             justify-between
+            pb-1_67
         ;
 
         &Contact {
@@ -66,7 +66,7 @@
                 justify-between
                 text-0_7
                 uppercase
-                pt-1_67
+                pt-2_22
                 mt-3_33
                 relative
                 uppercase

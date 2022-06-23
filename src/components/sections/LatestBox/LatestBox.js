@@ -15,7 +15,7 @@ const buttonArgs = {
 
 export default function LatestBox() {
     return (
-        <section className="mb-10_5" data-scroll-section>
+        <section className="pb-10_5 bg-beige relative" data-scroll-section>
             <div className="w-full bg-red py-10_5 relative overflow-hidden rounded-1">
                 <div className="flex flex-col items-center justify-center text-center w-50 mx-auto">
                     <LabelUptitle title="Etienne fort x vitoria vilela" color="outline" />
