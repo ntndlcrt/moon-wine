@@ -63,8 +63,10 @@ module.exports = {
             'gray_dark': '#707070',
             'gray_darker': '#2B2B2B',
             'gray_darkest': '#211B24',
+            'gray_darkest_faded': '#211B241F',
 
             'red': '#B83D42',
+            'beige_faded': '#F5F4EC33',
             'beige': '#F5F4EC',
             'beige_dark': '#E2DAC3',
             'beige_dark': '#E2DAC3',
@@ -72,7 +74,6 @@ module.exports = {
             'green_light': '#D9E0C0',
             'green': '#316B4B',
             'green_dark': '#1A3928',
-            'green_dark_faded': '#1A39281F'
         },
         borderRadius: {
             'DEFAULT': '0.6rem',

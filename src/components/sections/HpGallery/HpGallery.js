@@ -2,6 +2,7 @@ import Image from 'next/image'
 
 import { CheckoutDarkBg } from '@UI/Icons'
 import { Button } from '@UI/Buttons'
+import { PatternFrameDark } from '@UI/Patterns'
 
 import styles from './HpGallery.module.scss'
 
@@ -21,7 +22,9 @@ export default function HpGallery() {
                             <Image src="/img/png/bottles/oiseau-des-vignes.png" layout="fill" objectFit="contain" objectPosition="center" />
                         </div>
                         <Image src="/img/png/frame.png" layout="fill" objectFit="contain" objectPosition="center" />
-                        <div className={styles.frameBackground}></div>
+                        <div className={styles.frameBackground}>
+                            <PatternFrameDark />
+                        </div>
                     </div>
                 </div>
                 <div className="col-span-10 col-start-[12] text-beige py-2">

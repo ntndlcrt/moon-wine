@@ -10,7 +10,7 @@
 
     &__cards {
         display: grid;
-        gap: 2.4rem;
+        gap: 12rem;
         overflow: visible;
         position: absolute;
         height: fit-content !important;
@@ -19,6 +19,8 @@
         &__card {
             height: 60rem;
             width: 40rem;
+            min-height: 60rem;
+            min-width: 40rem;
             background: no-repeat center/cover;
         }
     }
