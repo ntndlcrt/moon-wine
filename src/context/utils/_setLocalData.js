@@ -1,4 +1,4 @@
-import getLocalData from '@context/utils'
+import { getLocalData } from '@context/utils'
 
 export default function setLocalData(setCart, setCheckoutId, setCheckoutUrl) {
     const localData = getLocalData()

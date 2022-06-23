@@ -5,6 +5,7 @@ import Nav from '@molecules/Nav'
 import Cart from '@molecules/Cart'
 import Footer from '@molecules/Footer'
 import StepsOverlay from '@molecules/StepsOverlay'
+import { CartProvider } from '@context/Store'
 
 import '@styles/app.scss'
 
@@ -45,7 +46,7 @@ export default function App({ Component, pageProps }) {
     })
 
     return (
-        <>
+        <CartProvider>
             <AgeConfirm />
             <Nav />
             <StepsOverlay />
@@ -54,6 +55,6 @@ export default function App({ Component, pageProps }) {
                 <Component {...pageProps} />
                 <Footer />
             </main>
-        </>
+        </CartProvider>
     )
 }

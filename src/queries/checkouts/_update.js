@@ -1,6 +1,7 @@
 import { storefrontClient } from '@queries/storefrontClient'
 
-export async function updateCheckout(id, lineItems) {  
+export async function updateCheckout(id, lineItems) {
+
     const formattedLineItems = lineItems.map(item => {
         return `{
             variantId: "${item.variantId}",
@@ -10,7 +11,7 @@ export async function updateCheckout(id, lineItems) {
   
     const query = `
         mutation {
-            checkoutLineItemsReplace(lineItems: [${formattedLineItems}], checkoutId: "${id}") {
+            checkoutLineItemsReplace(lineItems: [${formattedLineItems}], checkoutId: "${atob(id)}") {
                 checkout {
                     id
                     webUrl

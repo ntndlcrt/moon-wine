@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
 
+import { useCartContext } from '@context/Store'
 import { Logo } from '@UI/Logos'
 import { Search, User, Bottle } from '@UI/Icons'
 
@@ -8,6 +9,16 @@ import styles from './Nav.module.scss'
 
 export default function Nav() {
     const [showProducts, setShowProducts] = useState(false)
+    const [cartItems, setCartItems] = useState(0)
+    const cart = useCartContext()[0]
+  
+    useEffect(() => {
+        let numItems = 0
+        cart.forEach(item => {
+            numItems += item.variantQuantity
+        })
+        setCartItems(numItems)
+    }, [cart])
 
     function toggleCart() {
         let current = localStorage.getItem('openCart')
@@ -47,7 +58,7 @@ export default function Nav() {
                 </div>
                 <div className={styles.navIconsCart} onClick={() => {toggleCart()}}>
                     <Bottle color="beige" />
-                    <span className={styles.navIconsCartCount}>0</span>
+                    <span className={styles.navIconsCartCount}>{cartItems}</span>
                 </div>
             </div>
             <div className={styles.navProducts} data-show={showProducts}>
