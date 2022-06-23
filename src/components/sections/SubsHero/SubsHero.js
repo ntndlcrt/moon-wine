@@ -1,6 +1,8 @@
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
 
+import { MoonSymbol } from '@UI/Icons'
+
 import styles from './SubsHero.module.scss'
 
 export default function SubsHero() {
@@ -21,6 +23,17 @@ export default function SubsHero() {
     return (
         <section className="bg-red" data-scroll-section>
             <div className="flex flex-col py-13 mb-13 items-center justify-center text-center text-beige">
+                <div className={styles.moonSymbols}>
+                    <div className={styles.moonSymbolsIcon}>
+                        <MoonSymbol icon="empty" />
+                    </div>
+                    <div className={styles.moonSymbolsIcon}>
+                        <MoonSymbol icon="half" />
+                    </div>
+                    <div className={styles.moonSymbolsIcon}>
+                        <MoonSymbol icon="full" isBeigeDark={true} />
+                    </div>
+                </div>
                 <h1 className="title--xxl mb-1_67">Les formules<br/>moonwine</h1>
                 <p className="mb-4_75">Moon Wine, c’est : un vigneron, un artiste, une box de vin naturel et deux<br/>cuvées dont une totalement exclusive en édition limitée.  Le tout, disponible,<br/>en trois formules pour satisfaire tous vos besoins.</p>
                 <div className={styles.displayed}>
