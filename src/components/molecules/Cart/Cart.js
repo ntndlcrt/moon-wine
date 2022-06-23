@@ -47,7 +47,7 @@ export default function Cart() {
                         <span className="title--l mb-3_33">Panier</span>
                         {cartItems.map(item => {
                             return (
-                                <CartItem {...item} />
+                                <CartItem key={`cart-item-${item.productHandle}`} {...item} />
                             )
                         })}
                         <div className="border-t w-full border-gray_darkest_faded mt-auto pt-1_67">
