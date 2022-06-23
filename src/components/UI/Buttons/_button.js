@@ -10,7 +10,8 @@ export default function Button(args) {
         url,
         title,
         isLink,
-        clickEvent
+        clickEvent,
+        fulLWidth
     } = args
     
     if(url) {
@@ -23,7 +24,7 @@ export default function Button(args) {
         }
     } else {
         return (
-            <span className={`${styles.button} ${color === 'beige' ? styles.beige : ''}`} onClick={clickEvent ?? ''}>{title}</span>
+            <span className={`${styles.button} ${color === 'beige' ? styles.beige : ''} ${fulLWidth ? 'w-full text-center' : 'w-content' }`} onClick={clickEvent ?? ''}>{title}</span>
         )
     }
 }

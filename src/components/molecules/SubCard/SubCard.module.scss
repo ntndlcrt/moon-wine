@@ -1,0 +1,16 @@
+.subCard {
+    @apply
+        flex
+        flex-col
+        h-full
+        p-2_77
+        rounded-1
+    ;
+
+    &Icon {
+        width: 5vw;
+        height: 5vw;
+
+        @apply mb-2_22;
+    }
+}
