@@ -98,15 +98,30 @@
             left-0
             top-0
             -translate-y-full
+            grid
+            grid-cols-4
+            gap-1_1
         ;
 
-        padding-top: 13.33vw;
+        padding-top: 10vw;
         padding-right: 6rem;
         padding-left: 6rem;
-        padding-bottom: 6rem;
+        padding-bottom: 5.55vw;
 
         &[data-show="true"] {
             @apply -translate-y-0;
+        }
+
+        &Card {
+            @apply h-full cursor-pointer;
+
+            &Image {
+                @apply w-full bg-beige rounded-1 border-beige relative mb-0_8;
+
+                border-width: 2.5vw;
+                border-style: solid;
+                height: 17vw;
+            }
         }
     }
 }

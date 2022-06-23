@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { useState, useEffect } from 'react'
 
 import { useCartContext } from '@context/Store'
@@ -62,7 +63,33 @@ export default function Nav() {
                 </div>
             </div>
             <div className={styles.navProducts} data-show={showProducts}>
-                TEST
+                <Link href="/boxs">
+                    <div className={styles.navProductsCard}>
+                        <div className={styles.navProductsCardImage}>
+                            <Image src="/img/png/navProducts/box.png" layout="fill" objectPosition="center" objectFit="contain" />
+                        </div>
+                        <span className="text-1_18">Boxs à l’unité</span>
+                    </div>
+                </Link>
+                <Link href="/cave-exclusive">
+                    <div className={styles.navProductsCard}>
+                        <div className={styles.navProductsCardImage}>
+                            <Image src="/img/png/navProducts/bottle.png" layout="fill" objectPosition="center" objectFit="contain" />
+                        </div>
+                        <span className="text-1_18">La Cave Exclusive</span>
+                    </div>
+                </Link>
+                <Link href="/cartes-cadeaux">
+                    <div className={styles.navProductsCard}>
+                        <div className={styles.navProductsCardImage}>
+                            <Image src="/img/png/navProducts/gift.png" layout="fill" objectPosition="center" objectFit="contain" />
+                        </div>
+                        <span className="text-1_18">Cartes cadeaux</span>
+                    </div>
+                </Link>
+                <div className="bg-red h-full pt-2_77 rounded-1 tex-center">
+                    <p className="title--l text-beige text-center">La box du<br/>moment</p>
+                </div>
             </div>
         </nav>
     )
