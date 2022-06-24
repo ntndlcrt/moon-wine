@@ -87,8 +87,11 @@ export default function Nav() {
                         <span className="text-1_18">Cartes cadeaux</span>
                     </div>
                 </Link>
-                <div className="bg-red h-full pt-2_77 rounded-1 tex-center">
+                <div className="bg-red h-full pt-2_77 rounded-1 tex-center relative">
                     <p className="title--l text-beige text-center">La box du<br/>moment</p>
+                    <div className="h-50 absolute bottom-0 w-full">
+                        <Image src="/img/png/latest-box.png" layout="fill" objectPosition="bottom center" objectFit="contain" />
+                    </div>
                 </div>
             </div>
         </nav>

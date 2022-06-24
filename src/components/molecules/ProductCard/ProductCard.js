@@ -38,7 +38,7 @@ export default function ProductCard({ handle, imgPng, availableForSale, title, w
             </Link>
             <AvailableForSale available={availableForSale} />
             <Link href={`/cave-exclusive/${handle}`} passHref>
-                <a>
+                <a className="w-90 mx-auto">
                     <h2 className={`title--l ${styles.productCardTitle}`}>{title}</h2>
                 </a>
             </Link>
