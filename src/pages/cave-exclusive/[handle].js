@@ -71,6 +71,9 @@ export const getStaticProps = async ({ params }) => {
             bgColor = 'bg-green_dark'
             textColor = 'text-green_light'
             break
+        default :
+            bgColor = 'bg-red'
+            textColor = 'text-beige'
     }
 
     return {
