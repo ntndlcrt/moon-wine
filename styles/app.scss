@@ -84,6 +84,10 @@ section {
         height: 8rem;
         bottom: -1.25rem;
     }
+
+    &--product {
+        @apply text-beige bg-red_dark;
+    }
 }
 
 @tailwind utilities;

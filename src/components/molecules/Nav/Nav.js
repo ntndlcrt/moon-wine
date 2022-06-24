@@ -64,7 +64,7 @@ export default function Nav() {
             </div>
             <div className={styles.navProducts} data-show={showProducts}>
                 <Link href="/boxs">
-                    <div className={styles.navProductsCard}>
+                    <div className={styles.navProductsCard} onClick={() => {setShowProducts(false)}}>
                         <div className={styles.navProductsCardImage}>
                             <Image src="/img/png/navProducts/box.png" layout="fill" objectPosition="center" objectFit="contain" />
                         </div>
@@ -72,7 +72,7 @@ export default function Nav() {
                     </div>
                 </Link>
                 <Link href="/cave-exclusive">
-                    <div className={styles.navProductsCard}>
+                    <div className={styles.navProductsCard} onClick={() => {setShowProducts(false)}}>
                         <div className={styles.navProductsCardImage}>
                             <Image src="/img/png/navProducts/bottle.png" layout="fill" objectPosition="center" objectFit="contain" />
                         </div>
@@ -80,7 +80,7 @@ export default function Nav() {
                     </div>
                 </Link>
                 <Link href="/cartes-cadeaux">
-                    <div className={styles.navProductsCard}>
+                    <div className={styles.navProductsCard} onClick={() => {setShowProducts(false)}}>
                         <div className={styles.navProductsCardImage}>
                             <Image src="/img/png/navProducts/gift.png" layout="fill" objectPosition="center" objectFit="contain" />
                         </div>

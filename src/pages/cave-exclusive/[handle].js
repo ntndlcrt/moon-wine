@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Image from 'next/image'
 
 import Nav from '@molecules/Nav'
 import { getProducts, getProductByHandle } from '@queries/products'
@@ -11,7 +12,7 @@ import { getThreeAvailablesProducts } from '@queries/products'
 
 export default function Product({ handle, title, imgPng, price, availableForSale, wineColor, variantId, bgColor, textColor, otherProducts }) {
     return (
-        <>
+        <div className="realtive">
             <Head>
                 <title>{title} | Moon wine</title>
             </Head>
@@ -31,7 +32,13 @@ export default function Product({ handle, title, imgPng, price, availableForSale
             </section>
             <ProductForm bgColor={bgColor} textColor={textColor} price={price} handle={handle} variantId={variantId} title={title} imgPng={imgPng} />
             <HpBottles isProductPage={true} products={otherProducts} />
-        </>
+            <div className="hpStickyButton hpStickyButton--product">
+                <div className="hpStickyButton__img hpStickyButton__img--product">
+                    <Image layout="fill" objectPosition="center" objectFit="contain" src="/img/png/bottles/amore.png" />
+                </div>
+                <span>Commander</span>
+            </div>
+        </div>
     )
 }
 
