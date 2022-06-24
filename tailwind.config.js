@@ -66,6 +66,7 @@ module.exports = {
             'gray_darkest_faded': '#211B241F',
 
             'red': '#B83D42',
+            'red_dark': "#AD393D",
             'beige_faded': '#F5F4EC33',
             'beige': '#F5F4EC',
             'beige_dark': '#E2DAC3',

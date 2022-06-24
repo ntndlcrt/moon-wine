@@ -4,7 +4,7 @@ import styles from './ProductDetails.module.scss'
 
 export default function ProductDetails({bgColor, textColor}) {
     return (
-        <section className={`relative pb-13 overflow-hidden ${bgColor}`} data-scroll-section>
+        <section className={`relative pb-6 overflow-hidden ${bgColor}`} data-scroll-section>
             <div className="extraPadding grid grid-cols-2 gap-7 items-stretch">
                 <div className="col-span-1">
                     <div className={styles.productDetailsImage} data-scroll data-scroll-speed="-2">

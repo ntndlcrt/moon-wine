@@ -1,0 +1,70 @@
+.productForm {
+    &Card {
+        @apply
+            bg-red_dark
+            relative
+            z-30
+            rounded-1
+            py-4_17
+            px-7
+            flex
+            flex-col
+            items-center
+            mx-auto
+            w-content
+        ;
+
+        &Visual {
+            @apply
+                bg-beige
+                rounded-round
+                overflow-hidden
+                relative
+            ;
+
+            width: 6.25vw;
+            height: 6.25vw;
+
+            &Image {
+                @apply
+                    absolute
+                    bottom-0
+                    left-1/2
+                    -translate-x-1/2
+                    translate-y-1/2
+                ;
+
+                width: 50%;
+                height: 115%;
+            }
+        }
+
+        &Input {
+            @apply flex items-stretch justify-center rounded-1 border border-beige_faded w-content;
+
+            &Less {
+                @apply border-r border-beige_faded cursor-pointer;
+                user-select: none;
+            }
+
+            &More {
+                @apply border-l border-beige_faded cursor-pointer;
+            }
+
+            &Number {
+                background: none !important;
+                outline: none !important;
+                border: none !important;
+                -webkit-appearance: none !important;
+                appearance: none !important;
+                width: fit-content !important;
+
+                @apply text-beige w-content;
+            }
+
+            * {
+                padding: 1.4vw 1.8vw;
+            }
+        }
+    }
+}
