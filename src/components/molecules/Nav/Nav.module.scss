@@ -21,6 +21,8 @@
         @apply col-span-1;
         width: 9vw;
         height: auto;
+        z-index: 30;
+        position: relative;
     }
 
     &Links {
@@ -30,6 +32,9 @@
             items-center
             justify-center
         ;
+
+        z-index: 30;
+        position: relative;
 
         a, span {
             @apply
@@ -51,6 +56,9 @@
             items-center
             justify-end
         ;
+
+        z-index: 30;
+        position: relative;
 
         &Icon {
             height: 1.67vw;
@@ -101,12 +109,14 @@
             grid
             grid-cols-4
             gap-1_1
+            z-10
         ;
 
         padding-top: 10vw;
         padding-right: 6rem;
         padding-left: 6rem;
         padding-bottom: 5.55vw;
+        transition: 0.3s cubic-bezier(.7,-0.01,.31,1);
 
         &[data-show="true"] {
             @apply -translate-y-0;

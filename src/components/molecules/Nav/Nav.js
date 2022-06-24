@@ -39,7 +39,7 @@ export default function Nav() {
                 <Link href={`/abonnements`}>
                     <a>Abonnements</a>
                 </Link>
-                <span onClick={() => {setShowProducts(!showProducts)}}>Produits</span>
+                <span className={showProducts ? 'text-red underline' : ''} onClick={() => {setShowProducts(!showProducts)}}>Produits</span>
                 <Link href={`/notre-histoire`}>
                     <a>Notre histoire</a>
                 </Link>
