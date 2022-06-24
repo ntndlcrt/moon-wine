@@ -16,15 +16,10 @@ export default function Product({ handle, title, imgPng, price, availableForSale
                 <title>{title} | Moon wine</title>
             </Head>
             <Nav />
-            {/* <section data-scroll-section className="bg-beige py-13 relative">
-                <h1>{title}</h1>
-                <p>{variantId}</p>
-                <button onClick={handleAddToCart}>Ajouter 1 au panier</button>
-            </section> */}
             <ProductHero bgColor={bgColor} textColor={textColor} title={title} imgPng={JSON.parse(imgPng)[0].src} />
             <ProductAbout bgColor={bgColor} textColor={textColor} />
             <ProductDetails bgColor={bgColor} textColor={textColor} />
-            <section className={`${bgColor} ${textColor} pt-7 pb-10_5 relative`} data-scroll-section>
+            <section className={`${bgColor} ${textColor} pt-7 pb-3_33 relative`} data-scroll-section>
                 <div className="extraPadding grid grid-cols-2 gap-7">
                     <div className="col-span-1">
                         <span className="title--xl w-75">À chaque cuvée sa propre histoire</span>
@@ -34,7 +29,7 @@ export default function Product({ handle, title, imgPng, price, availableForSale
                     </div>
                 </div>
             </section>
-            <ProductForm bgColor={bgColor} textColor={textColor} price={price} />
+            <ProductForm bgColor={bgColor} textColor={textColor} price={price} handle={handle} variantId={variantId} title={title} imgPng={imgPng} />
             <HpBottles isProductPage={true} products={otherProducts} />
         </>
     )

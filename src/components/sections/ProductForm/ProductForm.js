@@ -5,7 +5,7 @@ import Ticker from 'react-ticker'
 
 import styles from './ProductForm.module.scss'
 
-export default function ProductForm({bgColor, textColor, price}) {
+export default function ProductForm({bgColor, textColor, price, title, handle, imgPng, variantId}) {
     const addToCart = useAddToCartContext()
     const [quantity, setQuantity] = useState(1)
 
@@ -23,7 +23,7 @@ export default function ProductForm({bgColor, textColor, price}) {
     }
 
     return (
-        <section className={`relative pt-7 pb-30 ${bgColor} ${textColor}`} data-scroll-section>
+        <section className={`relative py-16_8 ${bgColor} ${textColor}`} data-scroll-section>
             <div className={styles.productFormCard}>
                 <div className={styles.productFormCardVisual}>
                     <div className={styles.productFormCardVisualImage}>
