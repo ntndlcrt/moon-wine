@@ -16,8 +16,8 @@
     ;
 
     z-index: 1000;
-    transition: 0.3s ease-in-out;
-    transition-delay: visibility 0.3s;
+    transition: 0.7s cubic-bezier(.7,-0.01,.31,1);
+    transition-delay: visibility 0.7s;
 
     &Hidden {
         @apply -translate-y-full;

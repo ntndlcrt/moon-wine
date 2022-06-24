@@ -4,7 +4,7 @@ import styles from './ProductHero.module.scss'
 
 export default function ProductHero({bgColor, textColor, title, imgPng}) {
     return (
-        <section className={`h-screen w-screen relative ${bgColor}`} data-scroll-section>
+        <section className={`h-screen w-screen relative z-30 ${bgColor}`} data-scroll-section>
             <div className={`${styles.productHeroTitle} ${textColor}`}>
                 <h1 data-scroll data-scroll-speed="1">{title}</h1>
             </div>

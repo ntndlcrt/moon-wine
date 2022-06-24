@@ -4,6 +4,8 @@ import Nav from '@molecules/Nav'
 import { getProducts, getProductByHandle } from '@queries/products'
 import { useAddToCartContext } from '@context/Store'
 import ProductHero from '@sections/ProductHero'
+import ProductAbout from '@sections/ProductAbout'
+import ProductDetails from '@sections/ProductDetails'
 
 export default function Product({ handle, title, imgPng, price, availableForSale, wineColor, variantId, bgColor, textColor }) {
     // async function checkout(id) {
@@ -40,6 +42,8 @@ export default function Product({ handle, title, imgPng, price, availableForSale
                 <button onClick={handleAddToCart}>Ajouter 1 au panier</button>
             </section> */}
             <ProductHero bgColor={bgColor} textColor={textColor} title={title} imgPng={JSON.parse(imgPng)[0].src} />
+            <ProductAbout bgColor={bgColor} textColor={textColor} />
+            <ProductDetails bgColor={bgColor} textColor={textColor} />
         </>
     )
 }
