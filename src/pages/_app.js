@@ -61,7 +61,7 @@ export default function App({ Component, pageProps }) {
             }
             <StepsOverlay />
             <Cart />
-            <main id="main" className="bg-beige" data-scroll-container>
+            <main id="main" className="bg-beige relative" data-scroll-container>
                 <Component {...pageProps} />
                 {isGallery !== true &&
                     <Footer />

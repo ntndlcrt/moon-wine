@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Image from 'next/image'
 
 import { getThreeAvailablesProducts } from '@queries/products'
 
@@ -13,7 +14,7 @@ import LatestBox from '@sections/LatestBox'
 
 export default function Home({products}) {
     return (
-        <>
+        <div className="relative">
             <Head>
                 <title>Moon Wine | Un vigneron, un artiste, un vin unique</title>
             </Head>
@@ -24,7 +25,13 @@ export default function Home({products}) {
             <HpNaturalWineClub />
             <HpBottles products={products} />
             <LatestBox />
-        </>
+            <div className="hpStickyButton">
+                <div className="hpStickyButton__img">
+                    <Image layout="fill" objectPosition="center" objectFit="contain" src="/img/png/hpStickyButton.png" />
+                </div>
+                <span>La box du moment</span>
+            </div>
+        </div>
     )
 }
 

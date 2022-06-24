@@ -55,4 +55,35 @@ section {
     margin: 0 1vw;
 }
 
+.hpStickyButton {
+    position: fixed;
+    right: 6rem;
+    bottom: 6rem;
+    z-index: 1000000;
+    z-index: 500;
+
+    @apply
+        uppercase
+        text-red
+        underline
+        rounded-full
+        bg-beige
+        text-0_83
+        px-3_33
+        py-1_67
+        font-600
+        block
+        cursor-pointer
+        overflow-hidden
+    ;
+
+    &__img {
+        position: absolute;
+        left: -5rem;
+        width: 15rem;
+        height: 8rem;
+        bottom: -1.25rem;
+    }
+}
+
 @tailwind utilities;
