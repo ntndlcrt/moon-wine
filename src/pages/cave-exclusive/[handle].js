@@ -6,8 +6,10 @@ import ProductHero from '@sections/ProductHero'
 import ProductAbout from '@sections/ProductAbout'
 import ProductDetails from '@sections/ProductDetails'
 import ProductForm from '@sections/ProductForm'
+import HpBottles from '@sections/HpBottles'
+import { getThreeAvailablesProducts } from '@queries/products'
 
-export default function Product({ handle, title, imgPng, price, availableForSale, wineColor, variantId, bgColor, textColor }) {
+export default function Product({ handle, title, imgPng, price, availableForSale, wineColor, variantId, bgColor, textColor, otherProducts }) {
     return (
         <>
             <Head>
@@ -33,6 +35,7 @@ export default function Product({ handle, title, imgPng, price, availableForSale
                 </div>
             </section>
             <ProductForm bgColor={bgColor} textColor={textColor} price={price} />
+            <HpBottles isProductPage={true} products={otherProducts} />
         </>
     )
 }
@@ -55,6 +58,7 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async ({ params }) => {
     const product = await getProductByHandle(params.handle)
     const { handle, title, imgPng, price, availableForSale, wineColor, variantId } = product
+    const otherProducts = await getThreeAvailablesProducts()
 
     let bgColor, textColor
 
@@ -86,7 +90,8 @@ export const getStaticProps = async ({ params }) => {
             wineColor,
             variantId,
             bgColor,
-            textColor
+            textColor,
+            otherProducts: JSON.parse(JSON.stringify(otherProducts))
         }
     }
 }

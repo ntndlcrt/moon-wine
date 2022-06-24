@@ -23,7 +23,7 @@ export default function ProductForm({bgColor, textColor, price}) {
     }
 
     return (
-        <section className={`relative py-16_8 ${bgColor} ${textColor}`} data-scroll-section>
+        <section className={`relative pt-7 pb-30 ${bgColor} ${textColor}`} data-scroll-section>
             <div className={styles.productFormCard}>
                 <div className={styles.productFormCardVisual}>
                     <div className={styles.productFormCardVisualImage}>
