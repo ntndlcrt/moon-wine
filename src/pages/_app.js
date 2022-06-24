@@ -35,6 +35,14 @@ export default function App({ Component, pageProps }) {
             scroll.update()
         })
         
+        let singleProductButton = document.querySelector('#singleProductButton')
+
+        if(singleProductButton) {
+            singleProductButton.addEventListener('click', () => {
+                scroll.scrollTo(document.querySelector('#singleProductForm'))
+            })
+        }
+        
         window.addEventListener('resize', () => {
             scroll.update()
         })
