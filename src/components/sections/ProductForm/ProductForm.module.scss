@@ -2,7 +2,11 @@
     &Card {
         @apply
             bg-red_dark
-            relative
+            absolute
+            top-1/2
+            left-1/2
+            -translate-x-1/2
+            -translate-y-1/2
             z-30
             rounded-1
             py-4_17
@@ -58,8 +62,9 @@
                 -webkit-appearance: none !important;
                 appearance: none !important;
                 width: fit-content !important;
+                width: 8.33vw;
 
-                @apply text-beige w-content;
+                @apply text-beige w-content text-center;
             }
 
             * {
