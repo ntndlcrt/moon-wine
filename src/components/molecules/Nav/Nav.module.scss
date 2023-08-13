@@ -7,7 +7,7 @@
         py-1_67
         grid
         grid-cols-6
-        bg-white
+        text-white
     ;
     //pt-2_77
 
@@ -23,6 +23,8 @@
         height: auto;
         z-index: 30;
         position: relative;
+        -webkit-filter: grayscale(1) invert(1);
+        filter: grayscale(1) invert(1);
     }
 
     &Links {
@@ -68,6 +70,8 @@
             svg {
                 height: 1.67vw;
                 width: 1.67vw;
+                -webkit-filter: grayscale(1) invert(1);
+                filter: grayscale(1) invert(1);
             }
         }
 
@@ -81,6 +85,8 @@
             svg {
                 height: 1.67vw;
                 width: 1.67vw;
+                -webkit-filter: grayscale(1) invert(1);
+                filter: grayscale(1) invert(1);
             }
 
             &Count {
