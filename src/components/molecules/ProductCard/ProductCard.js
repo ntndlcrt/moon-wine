@@ -46,7 +46,7 @@ export default function ProductCard({ handle, imgPng, availableForSale, title, w
                 {noWhiteLabel !== true &&
                     <LabelWineColor text={wineColor ?? release ?? '---'} />
                 }
-                <span className="ml-0_8 text-1">{price}€</span>
+                <span className="ml-0_8 text-1">{price.amount}€</span>
             </div>
         </motion.div>
     )

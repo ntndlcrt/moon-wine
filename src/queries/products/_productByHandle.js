@@ -29,7 +29,10 @@ export async function getProductByHandle(handle) {
                 edges {
                     node {
                         id
-                        price
+                        price {
+                            amount
+                            currencyCode
+                        }
                         availableForSale
                     }
                 }

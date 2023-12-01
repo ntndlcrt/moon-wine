@@ -33,7 +33,10 @@ export async function getGiftsCards(type = null) {
                             edges {
                                 node {
                                     availableForSale
-                                    price
+                                    price {
+                                        amount
+                                        currencyCode
+                                    }
                                 }
                             }
                         }

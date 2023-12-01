@@ -20,7 +20,7 @@ export default function SubCard({icon, isDarkBeige, title, content, price, infos
                 <p>{content}</p>
             </div>
             <div className="mb-2_22">
-                <span className="title--l leading-1_2">{price}</span>
+                <span className="title--l leading-1_2">{price.amount}</span>
                 <p>{infos}</p>
             </div>
             <div className="flex flex-col mb-2_77">

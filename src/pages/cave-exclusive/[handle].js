@@ -30,7 +30,7 @@ export default function Product({ handle, title, imgPng, price, availableForSale
                     </div>
                 </div>
             </section>
-            <ProductForm bgColor={bgColor} textColor={textColor} price={price} handle={handle} variantId={variantId} title={title} imgPng={imgPng} />
+            <ProductForm bgColor={bgColor} textColor={textColor} price={price.amount} handle={handle} variantId={variantId} title={title} imgPng={imgPng} />
             <HpBottles isProductPage={true} products={otherProducts} />
             <div id="singleProductButton" className="hpStickyButton hpStickyButton--product">
                 <div className="hpStickyButton__img hpStickyButton__img--product">

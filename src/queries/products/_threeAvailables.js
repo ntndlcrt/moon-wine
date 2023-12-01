@@ -35,7 +35,10 @@ export async function getThreeAvailablesProducts() {
                         variants(first: 1) {
                             edges {
                                 node {
-                                    price
+                                    price {
+                                        amount
+                                        currencyCode
+                                    }
                                     availableForSale
                                 }
                             }
@@ -56,7 +59,7 @@ export async function getThreeAvailablesProducts() {
 
     const response = await storefrontClient({query})
 
-    let products = response.data.collectionByHandle.products.edges
+    let products = response?.data?.collectionByHandle?.products?.edges
         ?
             getFormattedProducts(response.data.collectionByHandle.products.edges)
         :

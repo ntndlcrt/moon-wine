@@ -51,7 +51,10 @@ export async function getProducts(type = null) {
                     variants(first: 1) {
                         edges {
                             node {
-                                price
+                                price {
+                                    amount
+                                    currencyCode
+                                }
                                 availableForSale
                             }
                         }
@@ -74,8 +77,9 @@ export async function getProducts(type = null) {
     }`
 
     const response = await storefrontClient({query})
+    console.log(response)
 
-    let products = response.data.products.edges
+    let products = response?.data?.products?.edges
         ?
             getFormattedProducts(response.data.products.edges)
         :

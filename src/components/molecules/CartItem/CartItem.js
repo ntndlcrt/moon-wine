@@ -37,7 +37,7 @@ export default function CartItem(args) {
                 <span className={styles.cartItemQuantityToggle} onClick={() => updateItem(variantId, variantQuantity + 1)}>+</span>
             </div>
             <div className="flex flex-col text-right">
-                <span className="text-1_18 mb-0_83">{price}€</span>
+                <span className="text-1_18 mb-0_83">{price.amount}€</span>
                 <span className="uppercase font-500 underline text-0_83 cursor-pointer" onClick={() => updateItem(variantId, 0)}>Supprimer</span>
             </div>
         </div>
